@@ -1,0 +1,36 @@
+###############################################################################
+# Tony's additions
+# --
+# Just add "source .bashrc_tony" to your .bashrc
+###############################################################################
+
+# 256 colors in terminal because we live in the future
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+
+# AWS instance info
+AWS_FOLDER=~/Dropbox/aws
+AWS_KEY=$AWS_FOLDER/webserver_dyson.pem
+AWS_IP=dyson.stormbeard.net
+
+# Nutanix stuff
+alias dev='ssh tallen@10.63.1.39'
+alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
+
+# Servers
+alias dyson='ssh -i $AWS_KEY ec2-user@$AWS_IP'
+
+# Shortcuts
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
+alias ltr='ls -ltr'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Color that prompt!
+# http://misc.flogisoft.com/bash/tip_colors_and_formatting
+PS1='\[\033[02;92m\]\e[5m\u@\H: \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[37m\]'
