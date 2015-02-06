@@ -62,4 +62,4 @@ nmap <LocalLeader>tl :set list!<cr>
 nmap <LocalLeader>pp :set paste!<cr>
 
 " Set colorscheme
-colorscheme monokai
+colorscheme distinguished
