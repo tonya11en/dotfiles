@@ -66,6 +66,7 @@ alias la='ls -la'
 alias ltr='ls -ltr'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+alias vi='vim'
 
 ## Tony specific!
 
