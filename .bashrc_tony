@@ -54,7 +54,7 @@ function smile_prompt
   #default color
   DF='\[\e[0m\]'
 #  PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${DF}] ${SC}${DF} "
-  PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}] ${SM}\n└─╼ ${DF}"
+  PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}] ${SM}\n└─★ ${DF}"
 }
 
 PROMPT_COMMAND=smile_prompt
