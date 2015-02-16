@@ -23,15 +23,21 @@ CYAN='\[\033[0;36m\]'
 LIGHTCYAN='\[\033[1;36m\]'
 DEFAULT='\[\033[0m\]'
 
+ORANGE255="\e[38;5;130m"
+GREEN255="\e[38;5;107m"
+RED255="\e[38;5;124m"
+
 function smile_prompt
 {
   if [ "$?" -eq "0" ]
   then
     #smiley
-    SC="${GREEN}:)"
+    SC="${GREEN255}"
+    SM=":)"
   else
     #frowney
-    SC="${RED}:("
+    SC="${RED255}"
+    SM=":("
   fi
   if [ $UID -eq 0 ]
   then
@@ -39,15 +45,16 @@ function smile_prompt
     UC="${RED}"
   else
     #normal user color
-    UC="${PINK}"
+    UC="${ORANGE255}"
   fi
   #hostname color
-  HC="${LIGHTGREEN}"
+  HC="${GREEN255}"
   #regular color
-  RC="${YELLOW}"
+  RC="${GRAY}"
   #default color
   DF='\[\e[0m\]'
-  PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${DF}] ${SC}${DF} "
+#  PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${DF}] ${SC}${DF} "
+  PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}] ${SM}\n└─╼ ${DF}"
 }
 
 PROMPT_COMMAND=smile_prompt
