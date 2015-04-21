@@ -65,5 +65,5 @@ nmap <LocalLeader>pp :set paste!<cr>
 colorscheme wombat256mod
 
 " Highlight extra whitespace and over 80 chars.
-highlight EWOL ctermbg=white ctermfg=black guibg=white guifg=black
+highlight EWOL ctermbg=darkgray ctermfg=white guibg=darkgray guifg=darkgray
 match EWOL /\%>80v.\+\|\s\+$/
