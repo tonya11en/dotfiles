@@ -36,6 +36,10 @@ let maplocalleader=','        " all my macros start with ,
 set laststatus=2
 set t_Co=256                  " Enable 256 color mode
 
+"  80 char limit highlighting
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 "  searching
 set incsearch                 " incremental search
 set ignorecase                " search ignoring case
