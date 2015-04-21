@@ -67,3 +67,15 @@ colorscheme wombat256mod
 "  80 char limit highlighting
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" Show all tabs:
+/\t
+
+" Show trailing whitespace:
+/\s\+$
+
+" Show trailing whitespace only after some text (ignores blank lines):
+/\S\zs\s\+$
+
+" Show spaces before a tab:
+/ \+\ze\t
