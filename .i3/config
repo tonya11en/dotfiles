@@ -155,3 +155,7 @@ bar {
 
 # Start dropbox
 exec dropbox
+
+# Start network manager
+exec --no-startup-id nm-applet
+
