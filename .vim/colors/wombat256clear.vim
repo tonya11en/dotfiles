@@ -93,4 +93,5 @@ hi! link FoldColumn		Folded
 hi! link CursorColumn	CursorLine
 hi! link NonText		LineNr
 
+hi Normal ctermbg=none
 " vim:set ts=4 sw=4 noet:
