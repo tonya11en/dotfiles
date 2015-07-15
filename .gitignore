@@ -6,6 +6,7 @@
 !.bashrc_tony
 !.vimrc
 !.vim/*
+!.vim/colors/*
 !.gitignore
 !.i3
 !.i3/*
