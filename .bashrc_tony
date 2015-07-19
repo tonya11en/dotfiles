@@ -7,7 +7,7 @@
 ## Colors?  Used for the prompt.
 WHITE='\[\033[1;37m\]'
 LIGHTGRAY='\[\033[0;37m\]'
-GRAY='\[\033[1;30m\]'
+GRAY='\[\033[0;30m\]'
 BLACK='\[\033[0;30m\]'
 RED='\[\033[0;31m\]'
 LIGHTRED='\[\033[1;31m\]'
@@ -53,7 +53,6 @@ function smile_prompt
   RC="${GRAY}"
   #default color
   DF='\[\e[0m\]'
-#  PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${DF}] ${SC}${DF} "
   PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}] ${SM}\n└─★ ${DF}"
 }
 
