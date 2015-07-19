@@ -154,13 +154,13 @@ bar {
 
 
 # Start dropbox
-exec dropbox
+exec /home/tallen/bin/dropbox.py start
 
 # Start network manager
 exec --no-startup-id nm-applet
 
 # Set background
-exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX1.png
+exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX.png
 
 # Fix monitor setup
 exec sh ~/.screenlayout/sovereign.sh
