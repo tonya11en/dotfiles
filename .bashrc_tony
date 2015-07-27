@@ -50,7 +50,7 @@ function smile_prompt
   #hostname color
   HC="${GREEN255}"
   #regular color
-  RC="${GRAY}"
+  RC="${LIGHTGRAY}"
   #default color
   DF='\[\e[0m\]'
   PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}] ${SM}\n└─★ ${DF}"
