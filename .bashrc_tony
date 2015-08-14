@@ -71,8 +71,13 @@ alias ll='ls -l'
 alias la='ls -la'
 alias ltr='ls -ltr'
 alias grep='grep --color=auto'
+alias ggrep='git grep -i -C2'
+alias hgrep='history | grep -i'
+alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
 alias vi='vim'
+alias f.='find . -name'
+alias f='find'
 
 ## Tony specific!
 
