@@ -154,10 +154,7 @@ bar {
 
 
 # Start dropbox
-exec /home/tallen/bin/dropbox.py start
-
-# Start network manager
-exec --no-startup-id nm-applet
+exec dropbox start
 
 # Set background
 exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX.png
