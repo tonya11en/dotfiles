@@ -56,7 +56,7 @@ function smile_prompt
   RC="${LIGHTGRAY}"
   #default color
   DF='\[\e[0m\]'
-  PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC}$(__git_ps1)]${SM}\n└─★ ${DF}"
+  PS1="${SC}┌─[${UC}\u${RC}@${HC}\h: ${RC}\w${SC} $(__git_ps1)] ${SM}\n└─★ ${DF}"
 }
 
 PROMPT_COMMAND=smile_prompt
