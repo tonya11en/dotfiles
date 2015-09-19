@@ -51,7 +51,7 @@ function smile_prompt
     UC="${ORANGE255}"
   fi
   #hostname color
-  HC="${PURPLE}"
+  HC="${GREEN255}"
   #regular color
   RC="${LIGHTGRAY}"
   #default color
