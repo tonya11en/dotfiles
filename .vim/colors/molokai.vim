@@ -179,7 +179,7 @@ if &t_Co > 255
    " marks column
    hi SignColumn      ctermfg=118 ctermbg=235
    hi SpecialChar     ctermfg=161               cterm=bold
-   hi SpecialComment  ctermfg=245               cterm=bold
+   hi SpecialComment  ctermfg=245
    hi Special         ctermfg=81  ctermbg=232
    hi SpecialKey      ctermfg=245
 
@@ -203,7 +203,7 @@ if &t_Co > 255
    hi WildMenu        ctermfg=81  ctermbg=16
 
    hi Normal          ctermfg=252 ctermbg=233
-   hi Comment         ctermfg=59
+   hi Comment         ctermfg=243
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
    hi LineNr          ctermfg=250 ctermbg=234
