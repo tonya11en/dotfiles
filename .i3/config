@@ -163,4 +163,7 @@ exec --no-startup-id nm-applet
 exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX1.png
 
 # Fix monitor setup
-sh ~/.screenlayout/nutanix.sh
+exec sh ~/.screenlayout/sovereign.sh
+
+# Remove title bars from new windows.
+new_window 1pixel
