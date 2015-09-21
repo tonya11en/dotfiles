@@ -62,7 +62,7 @@ nmap <LocalLeader>tl :set list!<cr>
 nmap <LocalLeader>pp :set paste!<cr>
 
 " Set colorscheme
-colorscheme jellybeans
+colorscheme molokai
 
 " Highlight extra whitespace and over 80 chars.
 highlight EWOL ctermbg=darkgray ctermfg=white guibg=darkgray guifg=darkgray
