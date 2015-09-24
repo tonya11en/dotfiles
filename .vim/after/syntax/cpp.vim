@@ -659,6 +659,11 @@ syntax keyword cppSTLtype traits_type
 syntax keyword cppSTLtype type_info
 syntax keyword cppSTLtype u16string
 syntax keyword cppSTLtype u32string
+syntax keyword cppSTLtype uint8
+syntax keyword cppSTLtype uint16
+syntax keyword cppSTLtype uint32
+syntax keyword cppSTLtype uint64
+syntax keyword cppSTLtype uint128
 syntax keyword cppSTLtype unary_compose
 syntax keyword cppSTLtype unary_negate
 syntax keyword cppSTLtype valarray
