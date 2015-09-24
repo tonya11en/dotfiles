@@ -603,6 +603,11 @@ syntax keyword cppSTLtype ifstream
 syntax keyword cppSTLtype imaxdiv_t
 syntax keyword cppSTLtype indirect_array
 syntax keyword cppSTLtype int_type
+syntax keyword cppSTLtype int8
+syntax keyword cppSTLtype int16
+syntax keyword cppSTLtype int32
+syntax keyword cppSTLtype int64
+syntax keyword cppSTLtype int128
 syntax keyword cppSTLtype ios_base
 syntax keyword cppSTLtype iostream
 syntax keyword cppSTLtype istream
