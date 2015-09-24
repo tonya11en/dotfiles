@@ -1,5 +1,6 @@
 syntax on
 set background=dark
+set cursorline                " highlight the current line
 set ruler                     " show the line number on the bar
 set more                      " use more prompt
 set autoread                  " watch for file changes
