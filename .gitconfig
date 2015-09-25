@@ -1,0 +1,21 @@
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[push]
+	default = tracking
+[user]
+	name = Tony Allen
+	email = tallen@nutanix.com
+[diff]
+	renamelimit = 0
+[core]
+	editor = vim
+[alias]
+  l = log --graph --oneline --decorate
+  ll = log --graph --oneline --decorate --branches --tags
+  lll = log --graph --oneline --decorate --all
+  dh = diff HEAD
+  sr = stash --keep-index
