@@ -4,6 +4,10 @@
 	diff = auto
 	interactive = auto
 	status = auto
+[color "grep"]
+  linenumber = yellow bold
+  match = red
+  filename = magenta
 [push]
 	default = tracking
 [user]
@@ -11,6 +15,7 @@
 	email = tallen@nutanix.com
 [diff]
 	renamelimit = 0
+  tool = vimdiff
 [core]
 	editor = vim
 [alias]
