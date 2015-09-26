@@ -13,6 +13,7 @@ alias f='find'
 # Nutanix stuff.
 alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
 alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
+alias sjdev='ssh nutanix@cyril-allen.dev.eng.nutanix.com'
 
 # AWS stuff.
 AWS_FOLDER=~/Dropbox/aws
