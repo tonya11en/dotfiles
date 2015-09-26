@@ -98,3 +98,5 @@ alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
 
 # Servers
 alias dyson='ssh -i $AWS_KEY ec2-user@$AWS_IP'
+
+/usr/local/bin/virtualenvwrapper.sh
