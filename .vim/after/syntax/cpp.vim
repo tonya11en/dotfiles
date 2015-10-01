@@ -1373,3 +1373,7 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppRawDelimiter    Delimiter
   delcommand HiLink
 endif
+
+" Highlight extra whitespace and over 80 chars.                                                
+highlight EWOL ctermbg=darkgray ctermfg=white guibg=darkgray guifg=darkgray
+match EWOL /\%>80v.\+\|\s\+$/
