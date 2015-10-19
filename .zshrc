@@ -90,8 +90,8 @@ export PYTHONUSERBASE=$TOP/.python
 export PATH=$PATH:$TOP/qa/agave/bin
 export DISTCC_HOSTS="--randomize 10.3.128.11/16 10.3.128.12/16 10.3.128.13/16 10.3.128.14/16"
 
-source .aliases
-source .custom_cmds
+source ~/.aliases
+source ~/.custom_cmds
 
 # To get fonts for agnoster theme:
 # https://github.com/powerline/fonts
