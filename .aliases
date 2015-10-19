@@ -20,7 +20,6 @@ alias cdsv='cd $TOP/stargate/vdisk_controller'
 alias cdu='cd $TOP/util/base'
 # Look at all changed files in git repo and run cpplint on them.
 alias ncl='git diff --name-only | xargs tools/coding-style/cpplint.py'
-alias ggrep="git grep"
 alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
 alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
 
