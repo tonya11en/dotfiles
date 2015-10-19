@@ -82,6 +82,14 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:$TOP/qa/agave/bin:/home/tallen/bin:$TOP/qa/agave/bin:$TOP/qa/agave/bin:/home/tallen/arcanist/arcanist/bin/
+
+export TOP=$HOME/main
+export PYTHONPATH=$PYTHONPATH:$TOP/.python                                                     
+export PYTHONUSERBASE=$TOP/.python
+export PATH=$PATH:$TOP/qa/agave/bin
+export DISTCC_HOSTS="--randomize 10.3.128.11/16 10.3.128.12/16 10.3.128.13/16 10.3.128.14/16"
+
 source .aliases
 source .custom_cmds
 

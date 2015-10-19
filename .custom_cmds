@@ -10,3 +10,10 @@ function hi {
 function jira {
   firefox https://jira.nutanix.com/browse/$1
 }
+
+# Runs a single ptest
+function testone {
+  PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py - I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "- V -R $1"
+}                                                                                              
+# Run a test directory
+alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/  ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/     durham_ips.txt -o "-V"  -d'
