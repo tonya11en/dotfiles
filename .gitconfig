@@ -15,6 +15,7 @@
 	email = tallen@nutanix.com
 [diff]
 	renamelimit = 0
+  tool = vimdiff
 [core]
 	editor = vim
 [alias]
