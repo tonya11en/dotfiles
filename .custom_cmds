@@ -1,0 +1,7 @@
+# Tony's custom functions.
+# Author: Tony Allen (cyril0allen@gmail.com)
+
+# Highlight text in various output.
+function hi {
+  egrep --color -i "$1|$" $2
+}
