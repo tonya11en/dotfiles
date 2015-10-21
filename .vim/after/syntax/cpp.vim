@@ -35,6 +35,7 @@
 " Functions
 syn match   cCustomParen    "(" contains=cParen contains=cCppParen
 syn match   cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+
 hi def link cCustomFunc  Function
 
 " Template functions
@@ -46,10 +47,11 @@ if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_templat
 endif
 
 " Class and namespace scope
+let g:cpp_class_scope_highlight = 1
 if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     syn match    cCustomScope    "::"
     syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
-    hi def link cCustomClass Function  " disabled for now
+    hi def link cCustomClass Function
 endif
 
 " Alternative syntax that is used in:
