@@ -5,3 +5,7 @@
 function hi {
   egrep --color -i "$1|$" $2
 }
+
+# Go stuff
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
