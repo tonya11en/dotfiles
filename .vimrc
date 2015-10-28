@@ -65,6 +65,8 @@ nmap <LocalLeader>pp :set paste!<cr>
 " Set colorscheme
 colorscheme molokai
 
-" Highlight extra whitespace and over 80 chars.
-"highlight EWOL ctermbg=darkgray ctermfg=white guibg=darkgray guifg=darkgray
-"match EWOL /\%>79v.\+\|\s\+$/
+" Recognize markdown format.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Pathogen
+execute pathogen#infect()
