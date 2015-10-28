@@ -7,5 +7,5 @@ function hi {
 }
 
 # Go stuff
-export GOROOT=$HOME/go
+export GOROOT=$HOME/golang
 export PATH=$PATH:$GOROOT/bin
