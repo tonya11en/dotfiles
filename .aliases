@@ -11,7 +11,7 @@ alias f.='find . -name'
 alias f='find'
 
 # Nutanix stuff.
-alias dev='ssh tallen@10.63.1.39'
+alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
 alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
 
 # AWS stuff.
