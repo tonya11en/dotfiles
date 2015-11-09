@@ -22,6 +22,7 @@ alias cdu='cd $TOP/util/base'
 alias ncl='git diff --name-only | xargs tools/coding-style/cpplint.py'
 alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
 alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
+alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; make && testdir . ; popd'
 
 # AWS stuff.
 AWS_FOLDER=~/Dropbox/aws
