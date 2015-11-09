@@ -5,3 +5,8 @@
 function hi {
   egrep --color -i "$1|$" $2
 }
+
+# Open jira ticket in Firefox window.
+function jira {
+  firefox https://jira.nutanix.com/browse/$1
+}
