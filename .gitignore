@@ -1,6 +1,6 @@
 # Ignore everything
 *
-.vim/.netrwhist
+~/.vim/.netrwhist
 
 # But not these files...
 !.bashrc_tony
