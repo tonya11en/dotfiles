@@ -90,4 +90,5 @@ source .custom_cmds
 # https://github.com/robbyrussell/oh-my-zsh
 
 
-source ./hacking/env-setup
+export ANSIBLE_HOME=$HOME/ansible
+source $ANSIBLE_HOME/hacking/env-setup -q
