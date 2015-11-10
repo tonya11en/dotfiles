@@ -88,3 +88,6 @@ source .custom_cmds
 # To get fonts for agnoster theme:
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
+
+
+source ./hacking/env-setup
