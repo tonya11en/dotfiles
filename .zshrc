@@ -65,7 +65,6 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
 # fi
 
 # Compilation flags
@@ -88,3 +87,7 @@ source .custom_cmds
 # To get fonts for agnoster theme:
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
+
+if [[ $(hostname) = "Harbinger" ]]; then
+  export GOPATH='/Users/cyril/Go'
+fi
