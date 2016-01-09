@@ -61,6 +61,12 @@ endif
 nmap <LocalLeader>tl :set list!<cr>
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
+" make tab do escape stuff
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
 
 " Set colorscheme
 colorscheme molokai
