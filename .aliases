@@ -20,3 +20,7 @@ AWS_FOLDER=~/Dropbox/aws
 AWS_KEY=$AWS_FOLDER/webserver_dyson.pem
 AWS_IP=dyson.stormbeard.net
 alias dyson='ssh -i $AWS_KEY ec2-user@$AWS_IP'
+
+if [[ $(hostname) = "Harbinger" ]]; then
+  alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD/'
+fi
