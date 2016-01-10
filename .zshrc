@@ -78,8 +78,8 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source .aliases
-source .custom_cmds
+source $HOME/.aliases
+source $HOME/.custom_cmds
 
 # To get fonts for agnoster theme:
 # https://github.com/powerline/fonts
