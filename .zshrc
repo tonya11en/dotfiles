@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/cyril/.oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -88,6 +85,19 @@ source .custom_cmds
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
 
+# Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then
+  export ZSH=/Users/cyril/.oh-my-zsh
   export GOPATH='/Users/cyril/Go'
+fi
+
+# Sovereign
+if [[ $(hostname) = "SOVEREIGN" ]]; then
+  export ZSH=/home/tallen/.oh-my-zsh
+
+  # Setup version of Go.
+  source /home/tallen/.gvm/scripts/gvm
+  gvm use go1.5.1 > /dev/null
+  export GOPATH='/home/tallen/gowork'
+  export PATH=$PATH:$GOPATH/bin
 fi
