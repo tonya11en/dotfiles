@@ -55,4 +55,20 @@ if [[ $(hostname) = "SOVEREIGN" ]]; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
+# Bloodlord
+if [[ $(hostname) = "BLOODLORD" ]]; then
+  # Mysterious huge git repo stuff.
+  __git_files () { 
+      _wanted files expl 'local files' _files     
+  }
+
+  # SSH agent stuff.
+  if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+    ssh-add
+  fi
+
+  export ZSH=/home/tallen/.oh-my-zsh
+fi
+
 source $ZSH/oh-my-zsh.sh

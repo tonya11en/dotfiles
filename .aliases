@@ -30,3 +30,20 @@ fi
 if [[ $(hostname) = "SOVEREIGN" ]]; then
   alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD'
 fi
+
+# Bloodlord
+if [[ $(hostname) = "BLOODLORD" ]]; then
+  alias cdtop="cd $TOP" 
+  alias cds='cd $TOP/stargate'
+  alias cdst='cd $TOP/qa/test/stargate'
+  alias cdsv='cd $TOP/stargate/vdisk_controller'
+  alias cdu='cd $TOP/util/base'
+  alias cdbt='cd $TOP/build/testoutput'
+  alias ncl='git diff --name-only | xargs tools/coding-style/cpplint.py'
+  alias ncl1='git diff --name-only HEAD~1 | xargs $TOP/tools/coding-style/cpplint.py 2>&1 | grep -v "Done process" | grep -v "Skipping input" | grep -v "Ignoring"'
+  alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
+  alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
+  alias oberon='ssh -o StrictHostKeyChecking=no nutanix@10.61.192.107'
+  alias heisenbug='ssh -o StrictHostKeyChecking=no nutanix@10.61.192.153'
+fi
+

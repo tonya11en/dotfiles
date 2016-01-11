@@ -10,3 +10,38 @@ function hi {
 function jira {
   firefox https://jira.nutanix.com/browse/$1
 }
+
+# Bloodlord
+if [[ $(hostname) = "BLOODLORD" ]]; then
+  # Run agave null test on some cluster.
+  function nulltest {
+    agave submit -I -N -v -c $1 null
+  }
+
+  # Runs a single ptest
+  function testone {
+    PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py - I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "- V -R $1"
+  }                                                                                              
+  # Run a test directory
+  alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  -d'
+
+  # Make NCC
+  alias mkncc="FORCE_BUILD_EGG=1; make all_pydeps -j16 && pushd serviceability/license && make -j16       && popd && make ncc-installer -j16"
+
+  # Copy over stargate binary to cluster.
+  function cpsg {
+   scp $TOP/build/stargate/stargate nutanix@$1:/home/nutanix/stargate.new
+  }
+
+  # Build tree with tests.
+  alias mkt='make BUILD_TYPE=opt'
+  alias mkd='make BUILD_TYPE=dbg DEBUG_SYMBOLS=1 BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
+  alias mko='make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
+  alias mkr='make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
+
+  # Build and run smoke.
+  alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; mkt && testdir . ; popd'
+
+  # Generate a code      
+  alias ncr='cat ~/code_review_password ; $TOP/tools/codereview/upload.py --rev=origin/master'
+fi
