@@ -68,6 +68,10 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
     ssh-add
   fi
 
+  export TOP=$HOME/main
+  export PYTHONPATH=$PYTHONPATH:$TOP/.python                                                     
+  export PYTHONUSERBASE=$TOP/.python
+  export PATH=$PATH:$TOP/qa/agave/bin
   export ZSH=/home/tallen/.oh-my-zsh
 fi
 
