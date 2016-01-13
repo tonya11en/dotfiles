@@ -51,8 +51,10 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
     rm cscope.files &&
     find stargate -name "*.cc" > cscope.files &&
     find stargate -name "*.h" >> cscope.files &&
+    find util -name "*.h" >> cscope.files &&
+    find util -name "*.cc" >> cscope.files &&
     cscope -b -q -k;
     popd > /dev/null
   }
-  alias cs='pushd $TOP; cscope -d; popd'
+  alias cs='mkcs; pushd $TOP > /dev/null; cscope -d; popd > /dev/null'
 fi
