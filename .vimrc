@@ -50,12 +50,6 @@ set backupdir=~/.vim_backup
 set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
 "set viminfo='100,f1
 
-" spelling
-if v:version >= 700
-  " Enable spell check for text files
-  autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en
-endif
-
 " mappings
 " toggle list mode
 nmap <LocalLeader>tl :set list!<cr>
