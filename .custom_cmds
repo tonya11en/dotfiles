@@ -47,12 +47,12 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
 
   # Make cscope db.
   function mkcs {
-    pushd $TOP;
+    pushd $TOP > /dev/null;
     rm cscope.files &&
     find stargate -name "*.cc" > cscope.files &&
-    fine stargate -name "*.h" >> cscope.files &&
+    find stargate -name "*.h" >> cscope.files &&
     cscope -b -q -k;
-    popd
+    popd > /dev/null
   }
   alias cs='pushd $TOP; cscope -d; popd'
 fi
