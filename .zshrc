@@ -31,9 +31,6 @@ export EDITOR='vim'
 # else
 # fi
 
-source $HOME/.aliases
-source $HOME/.custom_cmds
-
 # To get fonts for agnoster theme:
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
@@ -76,3 +73,5 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
+source $HOME/.custom_cmds
