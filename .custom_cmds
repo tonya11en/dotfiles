@@ -44,4 +44,15 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
 
   # Generate a code      
   alias ncr='cat ~/code_review_password ; $TOP/tools/codereview/upload.py --rev=origin/master'
+
+  # Make cscope db.
+  function mkcs {
+    pushd $TOP;
+    rm cscope.files &&
+    find stargate -name "*.cc" > cscope.files &&
+    fine stargate -name "*.h" >> cscope.files &&
+    cscope -b -q -k;
+    popd
+  }
+  alias cs='pushd $TOP; cscope -d; popd'
 fi
