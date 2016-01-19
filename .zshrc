@@ -35,6 +35,12 @@ export EDITOR='vim'
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
 
+# Beardmother
+if [[ $(hostname) = "BEARDMOTHER" ]]; then
+  export ZSH=/home/tallen/.oh-my-zsh
+  export GOPATH='/Users/cyril/Go'
+fi
+
 # Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
