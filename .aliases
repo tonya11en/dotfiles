@@ -3,12 +3,14 @@ alias la='ls -la'
 alias ltr='ls -ltr'
 alias grep='grep --color=auto'
 alias ggrep='git grep -n -i -C2'
+alias gg='git grep -n -i -C2'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
 alias vi='vim'
 alias f.='find . -name'
 alias f='find'
+alias bc='bc -l'
 
 # Nutanix stuff.
 alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
@@ -37,12 +39,13 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
   alias cds='cd $TOP/stargate'
   alias cdst='cd $TOP/qa/test/stargate'
   alias cdsv='cd $TOP/stargate/vdisk_controller'
-  alias cdu='cd $TOP/util/base'
+  alias cdu='cd $TOP/util'
   alias cdbt='cd $TOP/build/testoutput'
   alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
   alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
-  alias oberon='ssh -o StrictHostKeyChecking=no nutanix@10.61.192.107'
-  alias heisenbug='ssh -o StrictHostKeyChecking=no nutanix@10.61.192.153'
+  alias oberon='ssh nutanix@10.61.192.107'
+  alias heisenbug='ssh nutanix@10.61.192.153'
+  alias daenerys='ssh nutanix@10.61.192.65'
 
   CPP_LINT="$TOP/tools/coding-style/cpplint.py"
   alias ncl='git dh --name-only --relative | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"'

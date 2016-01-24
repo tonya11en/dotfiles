@@ -11,6 +11,11 @@ function jira {
   firefox https://jira.nutanix.com/browse/$1
 }
 
+# Remove IP from known hosts.
+function rmkh {
+  cat ~/.ssh/known_hosts | grep -v $1 > ~/.ssh/known_hosts
+}
+
 # Bloodlord
 if [[ $(hostname) = "BLOODLORD" ]]; then
   # Run agave null test on some cluster.
@@ -23,7 +28,7 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
     PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py - I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "- V -R $1"
   }                                                                                              
   # Run a test directory
-  alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  -d'
+  alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -d'
 
   # Make NCC
   alias mkncc="FORCE_BUILD_EGG=1; make all_pydeps -j16 && pushd serviceability/license && make -j16       && popd && make ncc-installer -j16"

@@ -74,7 +74,7 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
   export TOP=$HOME/main
   export PYTHONPATH=$PYTHONPATH:$TOP/.python                                                     
   export PYTHONUSERBASE=$TOP/.python
-  export PATH=$PATH:$TOP/qa/agave/bin
+  export PATH=$PATH:$TOP/qa/agave/bin:/home/tallen/bin
   export ZSH=/home/tallen/.oh-my-zsh
 fi
 
