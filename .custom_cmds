@@ -35,20 +35,46 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
 
   # Copy over stargate binary to cluster.
   function cpsg {
-   scp $TOP/build/stargate/stargate nutanix@$1:/home/nutanix/stargate.new
+   sshpass -p nutanix/4u scp $TOP/build/stargate/stargate nutanix@$1:/home/nutanix/stargate.new
   }
 
-  # Build tree with tests.
-  alias mkt='make BUILD_TYPE=opt'
-  alias mkd='make BUILD_TYPE=dbg DEBUG_SYMBOLS=1 BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
-  alias mko='make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
+  # Copy NOS installer to cluster.
+  function cpi {
+    installer_loc="build/phoenix/images/svm/master/nutanix_installer_package.tar"
+    sshpass -p nutanix/4u scp $TOP/$installer_loc nutanix@$1:/home/nutanix/
+  }
+
+
+  function mko {
+    pushd $TOP ;
+    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 force_cmake &&
+    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 &&
+    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 installer &&
+    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 NOS_VERSION=master media ;
+    popd
+  }
+  function mkr {
+    pushd $TOP ;
+    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 force_cmake &&
+    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 &&
+    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 installer &&
+    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 NOS_VERSION=master media ;
+    popd
+  }
   alias mkr='make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
 
   # Build and run smoke.
   alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; mkt && testdir . ; popd'
 
-  # Generate a code      
-  alias ncr='cat ~/code_review_password ; $TOP/tools/codereview/upload.py --rev=origin/master'
+  # Generate a code review.
+  function ncr {
+    if [ $# -eq 1 ]
+      then
+        $TOP/tools/codereview/upload.py --rev=$1
+      else
+        $TOP/tools/codereview/upload.py --rev=$1 -i $2
+    fi
+  }
 
   # Make cscope db.
   function mkcs {

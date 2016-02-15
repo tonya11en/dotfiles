@@ -35,6 +35,7 @@ fi
 
 # Bloodlord
 if [[ $(hostname) = "BLOODLORD" ]]; then
+  alias sz='source ~/.zshrc'
   alias cdtop="cd $TOP" 
   alias cds='cd $TOP/stargate'
   alias cdst='cd $TOP/qa/test/stargate'
@@ -43,9 +44,9 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
   alias cdbt='cd $TOP/build/testoutput'
   alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
   alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
-  alias oberon='ssh nutanix@10.61.192.107'
-  alias heisenbug='ssh nutanix@10.61.192.153'
-  alias daenerys='ssh nutanix@10.61.192.65'
+  alias oberon='sshpass -p nutanix/4u ssh nutanix@10.61.192.107'
+  alias heisenbug='sshpass -p nutanix/4u ssh nutanix@10.61.192.156'
+  alias dany='sshpass -p nutanix/4u ssh nutanix@10.61.192.65'
 
   CPP_LINT="$TOP/tools/coding-style/cpplint.py"
   alias ncl='git dh --name-only --relative | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"'
