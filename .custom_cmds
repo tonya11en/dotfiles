@@ -31,7 +31,7 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
   alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -d'
 
   # Make NCC
-  alias mkncc="FORCE_BUILD_EGG=1; make all_pydeps -j16 && pushd serviceability/license && make -j16       && popd && make ncc-installer -j16"
+  alias mkncc="make FORCE_BUILD_EGG=1 BUILD_TESTS=0 RUN_NCC_SANITY=0 all_pydeps -j16 && pushd serviceability/license && make -j16 && popd && make ncc-installer -j16"
 
   # Copy over stargate binary to cluster.
   function cpsg {
@@ -44,6 +44,10 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
     sshpass -p nutanix/4u scp $TOP/$installer_loc nutanix@$1:/home/nutanix/
   }
 
+  # SSH to a CVM
+  function svm {
+    /usr/bin/sshpass -p nutanix/4u nutanix@$1
+  }
 
   function mko {
     pushd $TOP ;
@@ -61,7 +65,6 @@ if [[ $(hostname) = "BLOODLORD" ]]; then
     make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 NOS_VERSION=master media ;
     popd
   }
-  alias mkr='make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0'
 
   # Build and run smoke.
   alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; mkt && testdir . ; popd'
