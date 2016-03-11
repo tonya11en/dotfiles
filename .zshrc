@@ -47,15 +47,8 @@ if [[ $(hostname) = "Harbinger" ]]; then
   export GOPATH='/Users/cyril/Go'
 fi
 
-# Sovereign
-if [[ $(hostname) = "SOVEREIGN" ]]; then
+if [[ $(hostname) = "LEGION" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
-
-  # Setup version of Go.
-  source /home/tallen/.gvm/scripts/gvm
-  gvm use go1.5.1 > /dev/null
-  export GOPATH='/home/tallen/gowork'
-  export PATH=$PATH:$GOPATH/bin
 fi
 
 # Bloodlord

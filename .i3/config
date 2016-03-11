@@ -156,14 +156,8 @@ bar {
 # Start dropbox
 exec dropbox
 
-# Start network manager
-exec --no-startup-id nm-applet
-
 # Set background
 exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX1.png
-
-# Fix monitor setup
-exec sh ~/.screenlayout/sovereign.sh
 
 # Remove title bars from new windows.
 new_window 1pixel

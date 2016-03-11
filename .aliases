@@ -28,11 +28,6 @@ if [[ $(hostname) = "Harbinger" ]]; then
   alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD/'
 fi
 
-# Sovereign
-if [[ $(hostname) = "SOVEREIGN" ]]; then
-  alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD'
-fi
-
 # Bloodlord
 if [[ $(hostname) = "BLOODLORD" ]]; then
   alias sz='source ~/.zshrc'
