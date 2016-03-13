@@ -49,6 +49,7 @@ fi
 
 if [[ $(hostname) = "LEGION" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
+  source ~/.zshrc.archlinux
 fi
 
 # Bloodlord

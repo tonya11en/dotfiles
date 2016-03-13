@@ -1,0 +1,3 @@
+# Aliases
+alias pacman='pacman --color=always'
+alias cdaur='cd ~/downloads/software/aur'
