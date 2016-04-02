@@ -35,12 +35,18 @@ export EDITOR='vim'
 # https://github.com/powerline/fonts
 # https://github.com/robbyrussell/oh-my-zsh
 
+###############################################################################
+# Machine specifics.
+###############################################################################
+
+###############################################################################
 # Beardmother
 if [[ $(hostname) = "BEARDMOTHER" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/Users/cyril/Go'
 fi
 
+###############################################################################
 # Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
@@ -52,6 +58,7 @@ if [[ $(hostname) = "LEGION" ]]; then
   source ~/.zshrc.archlinux
 fi
 
+###############################################################################
 # Bloodlord
 if [[ $(hostname) = "BLOODLORD" ]]; then
   # Mysterious huge git repo stuff.
