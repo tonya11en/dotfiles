@@ -59,8 +59,8 @@ if [[ $(hostname) = "LEGION" ]]; then
 fi
 
 ###############################################################################
-# Bloodlord
-if [[ $(hostname) = "BLOODLORD" ]]; then
+# Cruella
+if [[ $(hostname) = "cruella" ]]; then
   # Mysterious huge git repo stuff.
   __git_files () { 
       _wanted files expl 'local files' _files     

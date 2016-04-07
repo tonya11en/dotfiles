@@ -16,8 +16,8 @@ function rmkh {
   cat ~/.ssh/known_hosts | grep -v $1 > ~/.ssh/known_hosts
 }
 
-# Bloodlord
-if [[ $(hostname) = "BLOODLORD" ]]; then
+# Cruella
+if [[ $(hostname) = "cruella" ]]; then
   # Run agave null test on some cluster.
   function nulltest {
     agave submit -I -N -v -c $1 null

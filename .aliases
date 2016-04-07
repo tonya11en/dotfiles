@@ -31,8 +31,9 @@ if [[ $(hostname) = "Harbinger" ]]; then
   alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD/'
 fi
 
-# Bloodlord
-if [[ $(hostname) = "BLOODLORD" ]]; then
+# Cruella
+if [[ $(hostname) = "cruella" ]]; then
+  alias sz='source ~/.zshrc'
   alias cdtop="cd $TOP" 
   alias cds='cd $TOP/stargate'
   alias cdst='cd $TOP/qa/test/stargate'
