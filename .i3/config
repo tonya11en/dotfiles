@@ -156,6 +156,9 @@ bar {
 # Start dropbox
 exec dropbox
 
+# Network manager.
+exec nm-applet
+
 # Set background
 exec feh --bg-scale ~/Dropbox/Wallpapers/tron_grid/hW8tBdX1.png
 
