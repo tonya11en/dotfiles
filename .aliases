@@ -11,6 +11,7 @@ alias vi='vim'
 alias f.='find . -name'
 alias f='find'
 alias bc='bc -l'
+alias sz='source ~/.zshrc'
 
 # Nutanix stuff.
 alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
@@ -31,7 +32,6 @@ fi
 
 # Bloodlord
 if [[ $(hostname) = "BLOODLORD" ]]; then
-  alias sz='source ~/.zshrc'
   alias cdtop="cd $TOP" 
   alias cds='cd $TOP/stargate'
   alias cdst='cd $TOP/qa/test/stargate'
