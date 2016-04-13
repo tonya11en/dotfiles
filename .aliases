@@ -15,6 +15,7 @@ alias sz='source ~/.zshrc'
 
 # Nutanix stuff.
 alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
+alias grit='ssh tallen@grit.rtp.nutanix.com'
 alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
 alias sjdev='ssh nutanix@cyril-allen.dev.eng.nutanix.com'
 alias ntnxvpn='sudo openconnect --juniper sv2sa.nutanix.com'
