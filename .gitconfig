@@ -23,3 +23,8 @@
   lll = log --graph --oneline --decorate --all
   dh = diff HEAD
   sr = stash --keep-index
+[log]
+	format = fuller
+	decorate = true
+[format]
+	pretty = fuller
