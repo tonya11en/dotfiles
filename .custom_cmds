@@ -46,7 +46,7 @@ if [[ $(hostname) = "cruella" ]]; then
 
   # SSH to a CVM
   function svm {
-    /usr/bin/sshpass -p nutanix/4u nutanix@$1
+    sshpass -p nutanix/4u ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nutanix@$1
   }
 
   function mko {

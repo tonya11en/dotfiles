@@ -4,6 +4,8 @@ alias ltr='ls -ltr'
 alias grep='grep --color=auto'
 alias ggrep='git grep -n -i -C2'
 alias gg='git grep -n -i -C2'
+alias gsno='git show --name-only'
+alias gls='git ls-files'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
@@ -45,9 +47,11 @@ if [[ $(hostname) = "cruella" ]]; then
   alias oberon='sshpass -p nutanix/4u ssh nutanix@10.61.192.107'
   alias heisenbug='sshpass -p nutanix/4u ssh nutanix@10.61.192.156'
   alias dany='sshpass -p nutanix/4u ssh nutanix@10.61.192.65'
+  alias testone='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -l'
 
   CPP_LINT="$TOP/tools/coding-style/cpplint.py"
   alias ncl='git dh --name-only --relative | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"'
   alias ncl1='git diff --name-only --relative HEAD~1 | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"'
 fi
 
+source ~/.tmp_alias
