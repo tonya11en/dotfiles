@@ -44,9 +44,9 @@ if [[ $(hostname) = "cruella" ]]; then
   alias cdbt='cd $TOP/build/testoutput'
   alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
   alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
-  alias oberon='sshpass -p nutanix/4u ssh nutanix@10.61.192.107'
-  alias heisenbug='sshpass -p nutanix/4u ssh nutanix@10.61.192.156'
-  alias dany='sshpass -p nutanix/4u ssh nutanix@10.61.192.65'
+  alias oberon='svm 10.61.192.107'
+  alias heisenbug='svm 10.61.192.156'
+  alias dany='svm 10.61.192.65'
   alias testone='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -l'
 
   CPP_LINT="$TOP/tools/coding-style/cpplint.py"
