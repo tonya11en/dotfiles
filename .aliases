@@ -1,3 +1,5 @@
+SSH_CMD='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+
 alias ll='ls -l'
 alias la='ls -la'
 alias ltr='ls -ltr'
@@ -18,17 +20,17 @@ alias ssh='ssh -o ServerAliveInterval=10'
 alias mm='vim -c NotMuch'
 
 # Nutanix stuff.
-alias dev='ssh tallen@bloodlord.rtp.nutanix.com'
-alias grit='ssh tallen@grit.rtp.nutanix.com'
-alias ithaca='ssh cyril.allen@ithaca.corp.nutanix.com'
-alias sjdev='ssh nutanix@cyril-allen.dev.eng.nutanix.com'
+alias dev="$SSH_CMD tallen@bloodlord.rtp.nutanix.com"
+alias grit="$SSH_CMD tallen@grit.rtp.nutanix.com"
+alias ithaca="$SSH_CMD cyril.allen@ithaca.corp.nutanix.com"
+alias sjdev="$SSH_CMD nutanix@cyril-allen.dev.eng.nutanix.com"
 alias ntnxvpn='sudo openconnect --juniper sv2sa.nutanix.com'
 
 # AWS stuff.
 AWS_FOLDER=~/Dropbox/aws
 AWS_KEY=$AWS_FOLDER/webserver_dyson.pem
 AWS_IP=dyson.stormbeard.net
-alias dyson='ssh -i $AWS_KEY ec2-user@$AWS_IP'
+alias dyson="$SSH_CMD -i $AWS_KEY ec2-user@$AWS_IP"
 
 # Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then
