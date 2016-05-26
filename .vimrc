@@ -36,6 +36,7 @@ set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 set laststatus=2
 set t_Co=256                  " Enable 256 color mode
+set textwidth=79              " Wrap text at 79 chars
 
 "  searching
 set incsearch                 " incremental search
