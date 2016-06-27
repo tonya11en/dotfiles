@@ -72,7 +72,7 @@ if [[ $(hostname) = "cruella" ]]; then
   }
 
   # Build and run smoke.
-  alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; mkt && testdir . ; popd'
+  alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; make && testone cdp_smoke_test_basic ; popd'
 
   # Generate a code review.
   function ncr {
