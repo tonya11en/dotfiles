@@ -4,13 +4,24 @@ import os, sys, json
 
 assert(len(sys.argv) == 3)
 
+# Get the old json.
 old_filename = sys.argv[1]
-old_data = open(old_filename, 'r').read()
-old_dict = json.loads(old_data)
+old_data = open(old_filename, 'r').readlines()
+# Get the last json in the file.
+start_idx = 0
+for idx in range(len(old_data)):
+  if old_data[idx].startswith("{\n"):
+    start_idx = idx
+old_dict = json.loads("".join(old_data[start_idx:]))
 
 new_filename = sys.argv[2]
-new_data = open(new_filename, 'r').read()
-new_dict = json.loads(new_data)
+new_data = open(new_filename, 'r').readlines()
+# Get the last json in the file.
+start_idx = 0
+for idx in range(len(new_data)):
+  if new_data[idx].startswith("{\n"):
+    start_idx = idx
+new_dict = json.loads("".join(new_data[start_idx:]))
 
 def print_general_info():
   hypervisor = old_dict["hypervisor"]
