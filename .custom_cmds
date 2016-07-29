@@ -23,10 +23,18 @@ if [[ $(hostname) = "cruella" ]]; then
     agave submit -I -N -v -c $1 null
   }
 
-  # Runs a single ptest
+  # Runs a single ptest.
   function testone {
     PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py - I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "- V -R $1"
   }                                                                                              
+
+  # Run a single test locally.
+  function testlocal {
+    ts=$(date +%s)
+    mkdir -p /tmp/testlocal/
+    make $1 && make test ARGS="-V -R $1" | tee /tmp/testlocal/$1_$ts.out
+  }
+
   # Run a test directory
   alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -d'
 
@@ -82,6 +90,10 @@ if [[ $(hostname) = "cruella" ]]; then
       else
         $TOP/tools/codereview/upload.py --rev=$1 -i $2
     fi
+  }
+
+  function cpl {
+    git diff --name-only --relative HEAD~$1 | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"
   }
 
   # Make cscope db.
