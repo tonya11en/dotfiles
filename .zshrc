@@ -48,7 +48,7 @@ fi
 
 ###############################################################################
 # Harbinger
-if [[ $(hostname) = "Harbinger" ]]; then
+if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
   export GOPATH='/Users/cyril/Go'
 fi
