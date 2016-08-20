@@ -1,0 +1,25 @@
+[general]
+# List of accounts to be synced, separated by a comma.
+accounts = nutanix
+
+[Account nutanix]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = nutanix-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = nutanix-remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+status_backend = sqlite
+
+[Repository nutanix-local]
+# Currently, offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Maildir
+
+[Repository nutanix-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = outlook.office365.com
+remoteuser = cyril.allen@nutanix.com
+folderfilter = lambda foldername: foldername in ["INBOX", "Inbox", "Sent"]
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
