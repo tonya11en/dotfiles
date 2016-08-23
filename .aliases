@@ -15,6 +15,7 @@ alias f='find'
 alias bc='bc -l'
 alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
+alias mm='vim -c NotMuch'
 
 # Nutanix stuff.
 alias dev='ssh tallen@bloodlord.rtp.nutanix.com'

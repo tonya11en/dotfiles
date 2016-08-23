@@ -9,6 +9,8 @@ localrepository = nutanix-local
 remoterepository = nutanix-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
+autorefresh = 1
+postsynchook = /home/tallen/bin/offlineimap-postsync
 
 [Repository nutanix-local]
 # Currently, offlineimap only supports maildir and IMAP for local repositories.
