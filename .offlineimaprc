@@ -20,6 +20,7 @@ localfolders = ~/Maildir
 
 [Repository nutanix-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+auth_mechanisms = GSSAPI, CRAM-MD5, PLAIN, LOGIN
 type = IMAP
 remotehost = outlook.office365.com
 remoteuser = cyril.allen@nutanix.com

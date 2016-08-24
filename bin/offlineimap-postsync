@@ -1,0 +1,24 @@
+notmuch new
+
+# functions
+function blacklist { notmuch tag -inbox -unread +delete $1; }
+
+notmuch tag -inbox +SCM to:scm-eng@nutanix.com tag:inbox
+notmuch tag +code-review from:gerrit@gerrit.eng.nutanix.com tag:inbox
+
+notmuch tag +flagged to:tallen@nutanix.com tag:inbox
+notmuch tag +flagged to:cyril.allen@nutanix.com tag:inbox
+notmuch tag +flagged to:tony_allen@nutanix.com tag:inbox
+
+notmuch tag +stargate to:stargate@nutanix.com tag:inbox
+notmuch tag +stargate to:stargate-dev@nutanix.com tag:inbox
+
+notmuch tag +jira subject:"[JIRA]" tag:inbox
+
+notmuch tag +jira subject:"[JIRA]" tag:inbox
+
+blacklist to:support-automation@nutanix.com
+blacklist from:support_bot@nutanix.com
+blacklist 'subject:"assigned to" and subject:"Handoff Queue"'
+blacklist from:donotreply@waiter.com
+blacklist 'subject:"Report: CAP Report"'

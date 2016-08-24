@@ -71,3 +71,17 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Pathogen
 execute pathogen#infect()
+
+" Notmuch mail config
+let g:notmuch_datetime_format = '%m.%d.%y %H:%M:%S'
+let g:notmuch_sendmail = 'sendmail'
+let g:notmuch_folders = [
+  \ [ 'new-tony', 'tag:flagged and tag:unread' ],
+  \ [ 'new', 'tag:inbox and tag:unread' ],
+  \ [ 'jira', 'tag:jira' ],
+  \ [ 'stargate', 'tag:stargate' ],
+  \ [ 'code-review', 'tag:code-review' ],
+  \ [ 'inbox', 'tag:inbox' ],
+  \ [ 'unread', 'tag:unread' ],
+  \ [ 'to-me', 'tag:flagged' ],
+  \ ]
