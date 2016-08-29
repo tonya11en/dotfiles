@@ -23,5 +23,3 @@ blacklist from:support_bot@nutanix.com
 blacklist 'subject:"assigned to" and subject:"Handoff Queue"'
 blacklist from:donotreply@waiter.com
 blacklist 'subject:"Report: CAP Report"'
-
-hide "date:..2016-01-01"
