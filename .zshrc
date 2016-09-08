@@ -51,6 +51,7 @@ fi
 if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
   export GOPATH='/Users/cyril/Go'
+  export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
 if [[ $(hostname) = "LEGION" ]]; then
