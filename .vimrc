@@ -82,6 +82,8 @@ let g:notmuch_folders = [
   \ [ 'stargate', 'tag:stargate' ],
   \ [ 'code-review', 'tag:code-review' ],
   \ [ 'inbox', 'tag:inbox' ],
+  \ [ 'eng', 'tag:eng' ],
+  \ [ 'seattle', 'tag:seattle' ],
   \ [ 'unread', 'tag:unread' ],
   \ [ 'to-me', 'tag:flagged' ],
   \ ]

@@ -16,7 +16,10 @@ notmuch tag +stargate to:stargate-dev@nutanix.com tag:inbox
 
 notmuch tag +jira subject:"[JIRA]" tag:inbox
 
-notmuch tag +jira subject:"[JIRA]" tag:inbox
+notmuch tag +seattle to:seattle-dev@nutanix.com tag:inbox
+notmuch tag +seattle to:seattle-all@nutanix.com tag:inbox
+
+notmuch tag +eng to:eng@nutanix.com tag:inbox
 
 blacklist to:support-automation@nutanix.com
 blacklist from:support_bot@nutanix.com
