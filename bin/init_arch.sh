@@ -187,7 +187,7 @@ pacman -S \
   usbutils \
   util-linux \
   vi \
-  vim \
+  gvim \
   vlc \
   wget \
   which \
@@ -262,7 +262,24 @@ pacman -S \
   xscreensaver \
   yaourt \
   zd1211-firmware \
-  zsh
+  zsh \
+  feh \
+  scrot \
+  # dmenu replacement
+  rofi \
+  # Trackpad settings
+  gpointing-device-settings \
+  imagemagick \
+  i3lock \
+  ruby \
+  rsync \
+  alot \
+  astroid \
+  elinks \
+  freerdp \
+  remmina \
+  clang \
+  qt4
 
 mkdir ~/.vim_backup
 touch ~/.tmp_alias
@@ -271,4 +288,11 @@ touch ~/.tmp_alias
 git clone https://github.com/stormbeard/dotfiles.git ~/dotfiles
 mv ~/dotfiles/* ~/
 mv ~/dotfiles/.* ~/
+
+# Set up mail client.
+git clone https://github.com/felipec/notmuch-vim.git
+pushd notmuch
+make build notmuch=~/notmuch && make && sudo make install
+popd
+gem install mail
 

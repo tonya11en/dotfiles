@@ -80,6 +80,7 @@ let g:notmuch_folders = [
   \ [ 'new', 'tag:inbox and tag:unread' ],
   \ [ 'jira', 'tag:jira' ],
   \ [ 'stargate', 'tag:stargate' ],
+  \ [ 'util-codereview', 'tag:util-codereview' ],
   \ [ 'code-review', 'tag:code-review' ],
   \ [ 'inbox', 'tag:inbox' ],
   \ [ 'eng', 'tag:eng' ],

@@ -14,6 +14,8 @@ notmuch tag +flagged to:tony_allen@nutanix.com tag:inbox
 notmuch tag +stargate to:stargate@nutanix.com tag:inbox
 notmuch tag +stargate to:stargate-dev@nutanix.com tag:inbox
 
+notmuch tag +util-codereview to:util-codereview@nutanix.com
+
 notmuch tag +jira subject:"[JIRA]" tag:inbox
 
 notmuch tag +seattle to:seattle-dev@nutanix.com tag:inbox
@@ -26,3 +28,4 @@ blacklist from:support_bot@nutanix.com
 blacklist 'subject:"assigned to" and subject:"Handoff Queue"'
 blacklist from:donotreply@waiter.com
 blacklist 'subject:"Report: CAP Report"'
+blacklist 'subject:"NuTest_Smoke_Suite failed"' from:noreply@qa.nutanix.com
