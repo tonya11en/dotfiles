@@ -16,6 +16,16 @@ function rmkh {
   cat ~/.ssh/known_hosts | grep -v $1 > ~/.ssh/known_hosts
 }
 
+# SCP to a CVM
+function svmcp {
+  sshpass -p nutanix/4u scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $1 nutanix@$2
+}
+
+# SSH to a CVM
+function svm {
+  sshpass -p nutanix/4u ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nutanix@$1
+}
+
 # Cruella
 if [[ $(hostname) = "cruella" ]]; then
   # Run agave null test on some cluster.
@@ -44,16 +54,6 @@ if [[ $(hostname) = "cruella" ]]; then
   # Copy over stargate binary to cluster.
   function cpsg {
    sshpass -p nutanix/4u scp $TOP/build/stargate/stargate nutanix@$1:/home/nutanix/stargate.new
-  }
-
-  # SCP to a CVM
-  function svmcp {
-    sshpass -p nutanix/4u scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $1 nutanix@$2
-  }
-
-  # SSH to a CVM
-  function svm {
-    sshpass -p nutanix/4u ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nutanix@$1
   }
 
   # Copy NOS installer to cluster.

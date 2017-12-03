@@ -19,7 +19,7 @@ set sidescrolloff=5           " keep at least 5 lines left/right
 set history=200
 set backspace=indent,eol,start
 set linebreak
-set cmdheight=2               " command line two lines high
+set cmdheight=1               " command line two lines high
 set undolevels=1000           " 1000 undos
 set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
@@ -71,20 +71,3 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Pathogen
 execute pathogen#infect()
-
-" Notmuch mail config
-let g:notmuch_datetime_format = '%m.%d.%y %H:%M:%S'
-let g:notmuch_sendmail = 'sendmail'
-let g:notmuch_folders = [
-  \ [ 'new-tony', 'tag:flagged and tag:unread' ],
-  \ [ 'new', 'tag:inbox and tag:unread' ],
-  \ [ 'jira', 'tag:jira' ],
-  \ [ 'stargate', 'tag:stargate' ],
-  \ [ 'util-codereview', 'tag:util-codereview' ],
-  \ [ 'code-review', 'tag:code-review' ],
-  \ [ 'inbox', 'tag:inbox' ],
-  \ [ 'eng', 'tag:eng' ],
-  \ [ 'seattle', 'tag:seattle' ],
-  \ [ 'unread', 'tag:unread' ],
-  \ [ 'to-me', 'tag:flagged' ],
-  \ ]

@@ -1,5 +1,7 @@
 SSH_CMD='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
+alias school='cd ~/Dropbox/Schoolwork/jvm'
+
 alias ll='ls -l'
 alias la='ls -la'
 alias ltr='ls -ltr'
@@ -11,19 +13,21 @@ alias gls='git ls-files'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
-alias vi='vim'
+alias vi='vim -p'
 alias f.='find . -name'
 alias f='find'
 alias bc='bc -l'
 alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
 alias mm='vim -c NotMuch'
+alias goodnight='sudo shutdown -h now'
+alias cdgo='cd $GOPATH/src'
 
 # Nutanix stuff.
 alias dev="$SSH_CMD tallen@bloodlord.rtp.nutanix.com"
 alias grit="$SSH_CMD tallen@grit.rtp.nutanix.com"
 alias ithaca="$SSH_CMD cyril.allen@ithaca.corp.nutanix.com"
-alias sjdev="$SSH_CMD nutanix@cyril-allen.dev.eng.nutanix.com"
+alias sjdev="$SSH_CMD cyril-allen.dev.eng.nutanix.com"
 alias ntnxvpn='sudo openconnect --juniper sv2sa.nutanix.com'
 
 # AWS stuff.
