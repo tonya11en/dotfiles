@@ -57,7 +57,6 @@ fi
 if [[ $(hostname) = "LEGION" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
-  export GOROOT=$HOME/gopath/go
   source ~/.zshrc.archlinux
 fi
 

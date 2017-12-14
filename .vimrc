@@ -69,5 +69,8 @@ colorscheme molokai
 " Recognize markdown format.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Run gofmt on save for go files.
+" au BufWritePost *.go !gofmt -w %
+
 " Pathogen
 execute pathogen#infect()
