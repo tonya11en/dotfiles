@@ -54,9 +54,10 @@ if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
-if [[ $(hostname) = "LEGION" ]]; then
+if [[ $(hostname) = "legion" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
+  export GOBIN=$GOPATH/bin
   source ~/.zshrc.archlinux
 fi
 

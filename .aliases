@@ -19,22 +19,14 @@ alias f='find'
 alias bc='bc -l'
 alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
-alias mm='vim -c NotMuch'
 alias goodnight='sudo shutdown -h now'
-alias cdgo='cd $GOPATH/src'
+alias cdgo='cd $GOPATH'
+alias cdsrc='cd $GOPATH/src'
 
-# Nutanix stuff.
-alias dev="$SSH_CMD tallen@bloodlord.rtp.nutanix.com"
-alias grit="$SSH_CMD tallen@grit.rtp.nutanix.com"
-alias ithaca="$SSH_CMD cyril.allen@ithaca.corp.nutanix.com"
-alias sjdev="$SSH_CMD cyril-allen.dev.eng.nutanix.com"
-alias ntnxvpn='sudo openconnect --juniper sv2sa.nutanix.com'
-
-# AWS stuff.
-AWS_FOLDER=~/Dropbox/aws
-AWS_KEY=$AWS_FOLDER/webserver_dyson.pem
-AWS_IP=dyson.stormbeard.net
-alias dyson="$SSH_CMD -i $AWS_KEY ec2-user@$AWS_IP"
+# Kubernetes
+alias k='kubectl'
+alias klog='kubectl log'
+alias mkb='minikube'
 
 # Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then

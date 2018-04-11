@@ -168,7 +168,7 @@ exec dropbox
 exec nm-applet
 
 # Set background
-exec feh --bg-scale ~/Dropbox/Wallpapers/crystal_harvest_v2_by_noneofus-d953kvq.jpg
+exec feh --bg-scale ~/Dropbox/Wallpapers/1470373027507.jpg
 
 # Keyboard backlight
 exec "/usr/local/bin/kb-light.py +"
