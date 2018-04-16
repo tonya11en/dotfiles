@@ -262,7 +262,7 @@ hi def link     goFunction					Function
 if g:go_highlight_methods != 0
 	syn match goMethod								/\(\.\)\@<=\w\+\((\)\@=/
 endif
-hi def link     goMethod						Type
+hi def link     goMethod            Macro
 
 " Structs; 
 if g:go_highlight_structs != 0
