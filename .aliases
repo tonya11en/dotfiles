@@ -23,6 +23,9 @@ alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
 alias cdsrc='cd $GOPATH/src'
 
+# Upbound
+alias cdrook='cd $GOPATH/src/github.com/rook/rook'
+
 # Kubernetes
 alias k='kubectl'
 alias klog='kubectl log'
