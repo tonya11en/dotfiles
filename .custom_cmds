@@ -6,106 +6,16 @@ function hi {
   egrep --color -i "$1|$" $2
 }
 
-# Open jira ticket in Firefox window.
-function jira {
-  firefox https://jira.nutanix.com/browse/$1
-}
-
 # Remove IP from known hosts.
 function rmkh {
   cat ~/.ssh/known_hosts | grep -v $1 > ~/.ssh/known_hosts
 }
 
-# SCP to a CVM
-function svmcp {
-  sshpass -p nutanix/4u scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $1 nutanix@$2
+# Generate cscope db for rook and open cscope.
+function rookcs {
+  cdrook &&
+
+  find . -name \*.go | grep -v ./vendor\* > cscope.files &&
+
+  cscope -k -q
 }
-
-# SSH to a CVM
-function svm {
-  sshpass -p nutanix/4u ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no nutanix@$1
-}
-
-# Cruella
-if [[ $(hostname) = "cruella" ]]; then
-  # Run agave null test on some cluster.
-  function nulltest {
-    agave submit -I -N -v -c $1 null
-  }
-
-  # Runs a single ptest.
-  function testone {
-    PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py - I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "- V -R $1"
-  }                                                                                              
-
-  # Run a single test locally.
-  function testlocal {
-    ts=$(date +%s)
-    mkdir -p /tmp/testlocal/
-    make $1 && make test ARGS="-V -R $1" | tee /tmp/testlocal/$1_$ts.out
-  }
-
-  # Run a test directory
-  alias testdir='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -d'
-
-  # Make NCC
-  alias mkncc="make FORCE_BUILD_EGG=1 BUILD_TESTS=0 RUN_NCC_SANITY=0 all_pydeps -j16 && pushd serviceability/license && make -j16 && popd && make ncc-installer -j16"
-
-  # Copy over stargate binary to cluster.
-  function cpsg {
-   sshpass -p nutanix/4u scp $TOP/build/stargate/stargate nutanix@$1:/home/nutanix/stargate.new
-  }
-
-  # Copy NOS installer to cluster.
-  function cpi {
-    installer_loc="$TOP/build/phoenix/images/svm/master/nutanix_installer_package.tar"
-    svmcp $TOP/$installer_loc nutanix@$1:/home/nutanix/
-  }
-
-  function mko {
-    pushd $TOP ;
-    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 force_cmake &&
-    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 &&
-    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 installer &&
-    make BUILD_TYPE=opt BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 NOS_VERSION=master media ;
-    popd
-  }
-  function mkr {
-    pushd $TOP ;
-    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 force_cmake &&
-    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 &&
-    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 installer &&
-    make BUILD_TYPE=release BUILD_TESTS=0 CMAKE_CUSTOM_BUILD_TESTS=0 NOS_VERSION=master media ;
-    popd
-  }
-
-  # Build and run smoke.
-  alias blazeit='pushd /home/tallen/main/qa/test/stargate/cdp_smoke ; make && testone cdp_smoke_test_basic ; popd'
-
-  # Generate a code review.
-  function ncr {
-    if [ $# -eq 1 ]
-      then
-        $TOP/tools/codereview/upload.py --rev=$1
-      else
-        $TOP/tools/codereview/upload.py --rev=$1 -i $2
-    fi
-  }
-
-  function cpl {
-    git diff --name-only --relative HEAD~$1 | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"
-  }
-
-  # Make cscope db.
-  function mkcs {
-    pushd $TOP > /dev/null;
-    rm cscope.files &&
-    find stargate -name "*.cc" > cscope.files &&
-    find stargate -name "*.h" >> cscope.files &&
-    find util -name "*.h" >> cscope.files &&
-    find util -name "*.cc" >> cscope.files &&
-    cscope -b -q -k;
-    popd > /dev/null
-  }
-  alias cs='mkcs; pushd $TOP > /dev/null; cscope -d; popd > /dev/null'
-fi

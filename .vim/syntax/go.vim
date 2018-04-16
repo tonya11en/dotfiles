@@ -52,19 +52,19 @@ if !exists("g:go_highlight_trailing_whitespace_error")
 endif
 
 if !exists("g:go_highlight_operators")
-	let g:go_highlight_operators = 0
+	let g:go_highlight_operators = 1
 endif
 
 if !exists("g:go_highlight_functions")
-	let g:go_highlight_functions = 0
+	let g:go_highlight_functions = 1
 endif
 
 if !exists("g:go_highlight_methods")
-	let g:go_highlight_methods = 0
+	let g:go_highlight_methods = 1
 endif
 
 if !exists("g:go_highlight_structs")
-	let g:go_highlight_structs = 0
+	let g:go_highlight_structs = 1
 endif
 
 if !exists("g:go_highlight_build_constraints")
@@ -269,8 +269,8 @@ if g:go_highlight_structs != 0
 	syn match goStruct								/\(.\)\@<=\w\+\({\)\@=/
 	syn match goStructDef							/\(type\s\+\)\@<=\w\+\(\s\+struct\s\+{\)\@=/
 endif
-hi def link     goStruct						Function
-hi def link     goStructDef         Function
+hi def link     goStruct            Macro
+hi def link     goStructDef         Macro
 
 " Build Constraints
 if g:go_highlight_build_constraints != 0
