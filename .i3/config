@@ -162,7 +162,7 @@ bar {
 }
 
 # Start dropbox
-exec dropbox
+exec /bin/dropbox
 
 # Network manager.
 exec nm-applet
@@ -178,5 +178,5 @@ exec "/usr/local/bin/kb-light.py +"
 new_window 1pixel
 
 # Gaps
-gaps inner 5
-gaps outer 1
+#gaps inner 5
+#gaps outer 1
