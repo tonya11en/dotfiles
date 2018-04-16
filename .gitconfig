@@ -29,3 +29,4 @@
 	decorate = true
 [format]
 	pretty = fuller
+	signoff = true
