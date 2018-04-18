@@ -28,7 +28,7 @@ alias gc='git commit -s'
 alias cdrook='cd $GOPATH/src/github.com/rook/rook'
 
 # Kubernetes
-alias k='kubectl'
+alias kc='kubectl'
 alias klog='kubectl log'
 alias mkb='minikube'
 
