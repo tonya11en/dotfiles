@@ -1,3 +1,0 @@
-Copy all this crap to a cvm.
-
-Run test.sh from the cvm and it'll run fio tests on the uvm it hosts.
