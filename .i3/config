@@ -120,6 +120,13 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+
+# Let's just start at 100%
+exec light -S 100
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -169,10 +176,6 @@ exec nm-applet
 
 # Set background
 exec feh --bg-scale ~/Dropbox/Wallpapers/1470373027507.jpg
-
-# Keyboard backlight
-exec "/usr/local/bin/kb-light.py +"
-exec "/usr/local/bin/kb-light.py +"
 
 # Remove title bars from new windows.
 new_window 1pixel
