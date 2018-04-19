@@ -31,7 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/terminator
 
 # start chromium
-bindsym $mod+c exec /usr/bin/chromium
+bindsym $mod+c exec /usr/bin/google-chrome-stable
 
 # start firefox
 bindsym $mod+i exec /usr/bin/firefox
