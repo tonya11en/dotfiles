@@ -31,7 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/terminator
 
 # start chromium
-bindsym $mod+c exec /usr/bin/google-chrome-stable
+bindsym $mod+c exec /usr/bin/chromium-browser
 
 # start firefox
 bindsym $mod+i exec /usr/bin/firefox
@@ -39,7 +39,6 @@ bindsym $mod+i exec /usr/bin/firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start a program launcher
 bindsym $mod+d exec "rofi -show run"
 # start dmenu (a program launcher)
 
@@ -183,3 +182,6 @@ new_window 1pixel
 # Gaps
 #gaps inner 5
 #gaps outer 1
+
+exec xrandr --output eDP-1 --scale 1.5x1.5
+xrandr --output eDP-1 --panning 2880x1620
