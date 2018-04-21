@@ -41,9 +41,10 @@ export EDITOR='vim'
 
 ###############################################################################
 # Beardmother
-if [[ $(hostname) = "darkstar" ]]; then
+if [[ $(hostname) = "medusa" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
-  export GOPATH='/Users/cyril/Go'
+  export GOPATH='/home/tallen/gopath'
+  export GOSRC='/home/tallen/gopath/src'
 fi
 
 ###############################################################################
