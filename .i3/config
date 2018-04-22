@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 7
+font pango:DejaVu Sans Mono 16
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -120,11 +120,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Screen brightness
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
-
-# Let's just start at 100%
-exec light -S 100
+bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.5 # increase screen brightness
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,4 +181,5 @@ new_window 1pixel
 #gaps outer 1
 
 exec xrandr --output eDP-1 --scale 1.5x1.5
-xrandr --output eDP-1 --panning 2880x1620
+exec xrandr --output eDP-1 --panning 2880x1620
+exec /usr/bin/nm-applet
