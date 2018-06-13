@@ -40,11 +40,14 @@ export EDITOR='vim'
 ###############################################################################
 
 ###############################################################################
-# Beardmother
+# Medusa
 if [[ $(hostname) = "medusa" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
-  export GOSRC='/home/tallen/gopath/src'
+#  export GOSRC='/home/tallen/gopath/src'
+  export PATH="$PATH:$GOPATH/bin"
+
+  fortune -s | cowsay
 fi
 
 ###############################################################################
@@ -55,30 +58,11 @@ if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+###############################################################################
+# Legion
 if [[ $(hostname) = "legion" || $(hostname) = "medusa" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
-fi
-
-###############################################################################
-# Cruella
-if [[ $(hostname) = "cruella" ]]; then
-  # Mysterious huge git repo stuff.
-  __git_files () { 
-      _wanted files expl 'local files' _files     
-  }
-
-  # SSH agent stuff.
-  if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s`
-    ssh-add
-  fi
-
-  export TOP=$HOME/main
-  export PYTHONPATH=$PYTHONPATH:$TOP/.python                                                     
-  export PYTHONUSERBASE=$TOP/.python
-  export PATH=$PATH:$TOP/qa/agave/bin:/home/tallen/bin
-  export ZSH=/home/tallen/.oh-my-zsh
 fi
 
 source $ZSH/oh-my-zsh.sh

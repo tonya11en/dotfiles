@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 16
+font pango:DejaVu Sans Mono 11
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,7 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/terminator
 
 # start chromium
-bindsym $mod+c exec /usr/bin/chromium-browser
+bindsym $mod+c exec /usr/bin/google-chrome-stable #--force-device-scale-factor=1.5
 
 # start firefox
 bindsym $mod+i exec /usr/bin/firefox
@@ -171,7 +171,7 @@ exec /bin/dropbox
 exec nm-applet
 
 # Set background
-exec feh --bg-scale ~/Dropbox/Wallpapers/1470373027507.jpg
+exec feh --bg-scale ~/Dropbox/Wallpapers/new_work/hW8tBdX.png
 
 # Remove title bars from new windows.
 new_window 1pixel
@@ -182,4 +182,7 @@ new_window 1pixel
 
 exec xrandr --output eDP-1 --scale 1.5x1.5
 exec xrandr --output eDP-1 --panning 2880x1620
+exec synclient MaxTapTime=0
+#exec xrandr --output DP-1-2 --scale 2x2
+#exec xrandr --output DP-1-2 --panning 2880x1620
 exec /usr/bin/nm-applet

@@ -23,6 +23,9 @@
   lll = log --graph --oneline --decorate --all
   dh = diff HEAD
   sr = stash --keep-index
+  amend = commit -S --amend
+  cm = commit -S -m
+  commit = commit -S
 [log]
 	format = fuller
 	decorate = true

@@ -17,5 +17,18 @@ function rookcs {
 
   find . -name \*.go | grep -v ./vendor\* > cscope.files &&
 
-  cscope -k -q
+  cscope -k -q -pn
+}
+
+function klog {
+  POD=$1
+
+  for namespace in $(kc get ns | grep -v ^NAME | cut -f1 -d' ')
+  do
+    output=$(kubectl log $POD -n $namespace 2>/dev/null)
+    if [ $? ]
+    then
+      echo $output
+    fi
+  done
 }

@@ -22,13 +22,13 @@ alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
 alias cdsrc='cd $GOPATH/src'
+alias gc='git checkout'
 
 # Upbound
 alias cdrook='cd $GOPATH/src/github.com/rook/rook'
 
 # Kubernetes
 alias kc='kubectl'
-alias klog='kubectl log'
 alias mkb='minikube'
 
 # Harbinger
