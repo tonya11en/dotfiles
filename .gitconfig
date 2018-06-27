@@ -17,6 +17,7 @@
 	renamelimit = 0
 [core]
 	editor = vim
+	excludesfile = ~/.global_gitignore
 [alias]
   l = log --graph --oneline --decorate
   ll = log --graph --oneline --decorate --branches --tags
@@ -26,6 +27,7 @@
   amend = commit -S --amend
   cm = commit -S -m
   commit = commit -S
+  branch = branch -vv
 [log]
 	format = fuller
 	decorate = true
