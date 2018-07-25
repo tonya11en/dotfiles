@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 7
+font pango:DejaVu Sans Mono 13
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,7 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/terminator
 
 # start chromium
-bindsym $mod+c exec /usr/bin/chromium
+bindsym $mod+c exec /usr/bin/google-chrome
 
 # start firefox
 bindsym $mod+i exec /usr/bin/firefox
@@ -162,10 +162,10 @@ bar {
 }
 
 # Start dropbox
-exec /bin/dropbox
+exec ~/.dropbox-dist/dropboxd
 
 # Network manager.
-exec nm-applet
+exec /usr/bin/nm-applet
 
 # Set background
 exec feh --bg-scale ~/Dropbox/Wallpapers/1470373027507.jpg

@@ -27,7 +27,7 @@ export PATH="$PATH:/opt/rh/git19/root/usr/bin:/opt/local/bin:/opt/local/sbin:/us
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='/usr/bin/vim'
 # else
 # fi
 
@@ -40,10 +40,10 @@ export EDITOR='vim'
 ###############################################################################
 
 ###############################################################################
-# Beardmother
-if [[ $(hostname) = "darkstar" ]]; then
+# Work
+if [[ $(hostname) = "rathma" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
-  export GOPATH='/Users/cyril/Go'
+  export GOPATH='/home/tallen/gopath'
 fi
 
 ###############################################################################
