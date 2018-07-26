@@ -23,10 +23,10 @@ alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
 alias cdsrc='cd $GOPATH/src'
 alias gc='git commit -s'
-alias note='mkdir -p ~/Dropbox/notes ; vi ~/Dropbox/notes/$(date +%s).note'
 
-# Upbound
-alias cdrook='cd $GOPATH/src/github.com/rook/rook'
+# Lyft
+alias llap='sh ~/bin/llaptop.sh'
+alias lscr='sh ~/bin/lscreen.sh'
 
 # Kubernetes
 alias kc='kubectl'

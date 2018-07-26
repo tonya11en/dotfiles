@@ -19,3 +19,24 @@ function rookcs {
 
   cscope -k -q
 }
+
+# For filling out forms with vim.
+function form {
+  vim /tmp/form.what
+  cat /tmp/form.what
+}
+
+function note {
+  mkdir -p ~/Dropbox/notes 
+  vim +'normal Go' +'r!date' +'normal Go' ~/Dropbox/notes/append.note
+}
+
+function lnote {
+  mkdir -p ~/Dropbox/notes 
+  vim +'normal Go' +'r!date' +'normal Go' ~/Dropbox/notes/lyft.note
+}
+
+function todo {
+  mkdir -p ~/Dropbox/notes 
+  vim +'normal 1yyGpGo'  ~/Dropbox/notes/todo.note
+}
