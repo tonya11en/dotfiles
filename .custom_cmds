@@ -26,17 +26,26 @@ function form {
   cat /tmp/form.what
 }
 
+function notevim {
+  vim +'normal Go' +'normal Go' +'normal 80i-' +'r!date' +'normal Go' +'normal 80i-' +'normal Go' $1
+}
+
 function note {
   mkdir -p ~/Dropbox/notes 
-  vim +'normal Go' +'r!date' +'normal Go' ~/Dropbox/notes/append.note
+  notevim ~/Dropbox/notes/append.note
 }
 
 function lnote {
   mkdir -p ~/Dropbox/notes 
-  vim +'normal Go' +'r!date' +'normal Go' ~/Dropbox/notes/lyft.note
+  notevim ~/Dropbox/notes/lyft.note
 }
 
 function todo {
   mkdir -p ~/Dropbox/notes 
-  vim +'normal 1yyGpGo'  ~/Dropbox/notes/todo.note
+  notevim  ~/Dropbox/notes/todo.note
+}
+
+function errlog {
+  mkdir -p ~/Dropbox/notes 
+  notevim  ~/Dropbox/notes/errlog.note
 }

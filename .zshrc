@@ -83,3 +83,5 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.custom_cmds
+export PATH="$PATH:$HOME/bin"
+
