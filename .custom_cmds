@@ -49,3 +49,9 @@ function errlog {
   mkdir -p ~/Dropbox/notes 
   notevim  ~/Dropbox/notes/errlog.note
 }
+
+
+function ldone {
+  mkdir -p ~/Dropbox/notes 
+  notevim  ~/Dropbox/notes/done.note
+}
