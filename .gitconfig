@@ -18,6 +18,7 @@
 [core]
 	editor = vim
 	pager = less -x2
+	excludesfile = /home/tallen/.gitignore_global
 [alias]
   l = log --graph --oneline --decorate
   ll = log --graph --oneline --decorate --branches --tags

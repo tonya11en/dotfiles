@@ -86,5 +86,5 @@ source $HOME/.aliases
 source $HOME/.custom_cmds
 export PATH="$PATH:$HOME/bin"
 
-export CC=clang-5.0
-export CXX=clang++-5.0
+export CC=clang
+export CXX=clang++
