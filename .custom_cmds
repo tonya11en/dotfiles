@@ -63,7 +63,22 @@ function ldone {
   notevim  ~/Dropbox/notes/done.note
 }
 
+
+###################################################################################################
+# Lyft
+###################################################################################################
+
 # Bazel commands
+ENVOY_CXX=clang++-6.0
+TONY_BAZEL_OPTS="-c dbg --config=clang-asan  --copt=-fno-limit-debug-info"
 function btest {
-  bazel test -c dbg --config=asan $@
+  CXX=$ENVOY_CXX bazel test $TONY_BAZEL_OPTS $@
+}
+
+function bb {
+  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
+}
+
+function bbnt {
+  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
 }
