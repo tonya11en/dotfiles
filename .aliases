@@ -21,9 +21,13 @@ alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
-alias cdsrc='cd $GOPATH/src'
+alias cdsrc='cd $GOPATH/src/github.com/lyft/'
 alias gc='git commit -s'
-alias note='mkdir -p ~/Dropbox/notes ; vi ~/Dropbox/notes/$(date +%s).note'
+alias ecs='cdsrc && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
+
+# Lyft
+alias llap='sh ~/bin/llaptop.sh'
+alias lscr='sh ~/bin/lscreen.sh'
 
 # Kubernetes
 alias kc='kubectl'

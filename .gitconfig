@@ -12,12 +12,13 @@
 	default = tracking
 [user]
 	name = Tony Allen
-	email = tony@allen.gg
+	email = tallen@lyft.com
 [diff]
 	renamelimit = 0
 [core]
 	editor = vim
 	pager = less -x2
+	excludesfile = /home/tallen/.gitignore_global
 [alias]
   l = log --graph --oneline --decorate
   ll = log --graph --oneline --decorate --branches --tags

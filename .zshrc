@@ -44,6 +44,7 @@ export EDITOR='/usr/bin/vim'
 if [[ $(hostname) = "rathma" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
+  export PATH=$PATH:$GOPATH/bin
 fi
 
 ###############################################################################
@@ -83,3 +84,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.custom_cmds
+export PATH="$PATH:$HOME/bin"
+
+export CC=clang
+export CXX=clang++

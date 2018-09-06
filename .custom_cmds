@@ -19,3 +19,66 @@ function rookcs {
 
   cscope -k -q
 }
+
+# For filling out forms with vim.
+function form {
+  vim /tmp/form.what
+  cat /tmp/form.what
+}
+
+function notevim {
+  vim +'normal Go' +'normal Go' +'normal 80i-' +'r!date' +'normal Go' +'normal 80i-' +'normal Go' $1
+}
+
+function lvpn {
+  echo IeThach8 | xclip -sel clip
+  cd ~/.vpn/
+  ./vpn
+}
+
+# NOTES
+function note {
+  mkdir -p ~/Dropbox/notes 
+  notevim ~/Dropbox/notes/append.note
+}
+
+function lnote {
+  mkdir -p ~/Dropbox/notes 
+  notevim ~/Dropbox/notes/lyft.note
+}
+
+function todo {
+  mkdir -p ~/Dropbox/notes 
+  vim  ~/Dropbox/notes/todo.note
+}
+
+function errlog {
+  mkdir -p ~/Dropbox/notes 
+  notevim  ~/Dropbox/notes/errlog.note
+}
+
+
+function ldone {
+  mkdir -p ~/Dropbox/notes 
+  notevim  ~/Dropbox/notes/done.note
+}
+
+
+###################################################################################################
+# Lyft
+###################################################################################################
+
+# Bazel commands
+ENVOY_CXX=clang++-6.0
+TONY_BAZEL_OPTS="-c dbg --config=clang-asan  --copt=-fno-limit-debug-info"
+function btest {
+  CXX=$ENVOY_CXX bazel test $TONY_BAZEL_OPTS $@
+}
+
+function bb {
+  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
+}
+
+function bbnt {
+  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
+}
