@@ -25,9 +25,6 @@ alias cdsrc='cd $GOPATH/src'
 alias gc='git commit -s'
 alias note='mkdir -p ~/Dropbox/notes ; vi ~/Dropbox/notes/$(date +%s).note'
 
-# Upbound
-alias cdrook='cd $GOPATH/src/github.com/rook/rook'
-
 # Kubernetes
 alias kc='kubectl'
 alias klog='kubectl log'
