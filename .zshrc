@@ -88,3 +88,4 @@ export PATH="$PATH:$HOME/bin"
 
 export CC=clang
 export CXX=clang++
+source '/home/tallen/src/blessclient/lyftprofile' # bless ssh alias
