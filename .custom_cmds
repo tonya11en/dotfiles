@@ -20,20 +20,26 @@ function rookcs {
   cscope -k -q
 }
 
+function cdtop {
+  while [[ ! -d $PWD/.git ]]
+  do
+    if [[ $PWD = "/" ]]; then 
+      break
+    fi
+
+    cd ..
+  done
+}
+
 # For filling out forms with vim.
 function form {
+  rm /tmp/form.what
   vim /tmp/form.what
   cat /tmp/form.what
 }
 
 function notevim {
   vim +'normal Go' +'normal Go' +'normal 80i-' +'r!date' +'normal Go' +'normal 80i-' +'normal Go' $1
-}
-
-function lvpn {
-  echo IeThach8 | xclip -sel clip
-  cd ~/.vpn/
-  ./vpn
 }
 
 # NOTES
@@ -67,6 +73,14 @@ function ldone {
 ###################################################################################################
 # Lyft
 ###################################################################################################
+
+# VPN
+function lvpn {
+  echo IeThach8 | xclip -sel clip
+  cd ~/.vpn/
+  ./vpn
+}
+
 
 # Bazel commands
 ENVOY_CXX=clang++-6.0
