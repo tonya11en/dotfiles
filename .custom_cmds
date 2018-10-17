@@ -86,13 +86,5 @@ function lvpn {
 ENVOY_CXX=clang++-6.0
 TONY_BAZEL_OPTS="-c dbg --config=clang-asan  --copt=-fno-limit-debug-info"
 function btest {
-  CXX=$ENVOY_CXX bazel test $TONY_BAZEL_OPTS $@
-}
-
-function bb {
-  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
-}
-
-function bbnt {
-  CXX=$ENVOY_CXX bazel build $TONY_BAZEL_OPTS $@
+  bazel test  --test_arg="-l trace" $@
 }

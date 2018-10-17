@@ -44,6 +44,7 @@ export EDITOR='/usr/bin/vim'
 if [[ $(hostname) = "rathma" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
+  export GOROOT=/usr/local/go
   export PATH=$PATH:$GOPATH/bin
 fi
 
@@ -88,4 +89,6 @@ export PATH="$PATH:$HOME/bin"
 
 export CC=clang
 export CXX=clang++
+[ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
+[ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
 source '/home/tallen/src/blessclient/lyftprofile' # bless ssh alias
