@@ -10,6 +10,7 @@ alias ggrep='git grep -n -i -C2'
 alias gg='git grep -n -i -C2'
 alias gsno='git show --name-only'
 alias gls='git ls-files'
+alias glsg='git ls-files | grep'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
@@ -21,12 +22,14 @@ alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
-alias cdsrc='cd $GOPATH/src'
+alias cdsrc='cd $GOPATH/src/github.com/lyft/'
 alias gc='git commit -s'
-alias note='mkdir -p ~/Dropbox/notes ; vi ~/Dropbox/notes/$(date +%s).note'
+alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
+alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
 
-# Upbound
-alias cdrook='cd $GOPATH/src/github.com/rook/rook'
+# Lyft
+alias llap='sh ~/bin/llaptop.sh'
+alias lscr='sh ~/bin/lscreen.sh'
 
 # Kubernetes
 alias kc='kubectl'

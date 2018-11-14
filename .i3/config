@@ -64,6 +64,10 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+semicolon move right
 
+# Move workspace to monitor
+bindsym $mod+Shift+m move workspace to output right
+
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -173,6 +177,12 @@ exec feh --bg-scale ~/Dropbox/Wallpapers/1470373027507.jpg
 # Keyboard backlight
 exec "/usr/local/bin/kb-light.py +"
 exec "/usr/local/bin/kb-light.py +"
+
+bindsym $mod+XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +10%
+bindsym $mod+XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl set 10%-
+bindsym $mod+XF86Display exec --no-startup-id xrandr --auto
+
+exec "/usr/local/bin/ckb-next -b"
 
 # Remove title bars from new windows.
 new_window 1pixel
