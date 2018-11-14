@@ -55,7 +55,7 @@ function lnote {
 
 function todo {
   mkdir -p ~/Dropbox/notes 
-  vim  ~/Dropbox/notes/todo.note
+  vim  ~/Dropbox/notes/todo.txt
 }
 
 function errlog {
@@ -83,8 +83,14 @@ function lvpn {
 
 
 # Bazel commands
-ENVOY_CXX=clang++-6.0
-TONY_BAZEL_OPTS="-c dbg --config=clang-asan  --copt=-fno-limit-debug-info"
-function btest {
-  bazel test  --test_arg="-l trace" $@
+function btd {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+}
+
+function bto {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
+}
+
+function btr {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
 }
