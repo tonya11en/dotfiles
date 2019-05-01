@@ -72,5 +72,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Run gofmt on save for go files.
 " au BufWritePost *.go !gofmt -w %
 
+au BufRead,BufNewFile test.log set filetype=gtest
+
 " Pathogen
 execute pathogen#infect()
