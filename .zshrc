@@ -91,4 +91,3 @@ export CC=clang
 export CXX=clang++
 [ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
 [ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
-source '/home/tallen/src/blessclient/lyftprofile' # bless ssh alias
