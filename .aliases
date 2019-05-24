@@ -26,6 +26,7 @@ alias cdsrc='cd $GOPATH/src/github.com/lyft/'
 alias gc='git commit -s'
 alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
 alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
+alias ct='ctags -R .'
 
 # Lyft
 alias llap='sh ~/bin/llaptop.sh'
@@ -39,6 +40,14 @@ alias mkb='minikube'
 # Harbinger
 if [[ $(hostname) = "Harbinger" ]]; then
   alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD/'
+fi
+
+# Rathma
+if [[ $(hostname) = "rathma" ]]; then
+  alias cde='cd ~/src/envoy'
+  alias cdaim='cd ~/gopath/src/github.com/lyft/adhocinfra'
+  alias cdesc='cd ~/src/envoy-static-config'
+  alias dev='gcloud compute --project "lyft-network-team" ssh --zone "us-west1-b" "persistent-bbox" '
 fi
 
 # Cruella

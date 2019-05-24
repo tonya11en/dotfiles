@@ -36,7 +36,7 @@ set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 set laststatus=2
 set t_Co=256                  " Enable 256 color mode
-set textwidth=100             " Wrap text at 100 chars
+set textwidth=80             " Wrap text at 80 chars
 
 "  searching
 set incsearch                 " incremental search
@@ -56,12 +56,6 @@ set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
 nmap <LocalLeader>tl :set list!<cr>
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
-" make tab do escape stuff
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
 
 " Set colorscheme
 colorscheme molokai
@@ -76,3 +70,18 @@ au BufRead,BufNewFile test.log set filetype=gtest
 
 " Pathogen
 execute pathogen#infect()
+
+" make tab do escape stuff
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+imap <Tab> <Esc>
+au VimEnter * map <Tab> <Esc>
+au VimEnter * imap <Tab> <Esc>
+au VimEnter * vmap <Tab> <Esc> 
+
+"cscope stuff
+nmap <F8> :TagbarToggle<CR>
+nnoremap <F12> :CtrlPTag<cr>
