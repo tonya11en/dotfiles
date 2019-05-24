@@ -69,10 +69,43 @@ function ldone {
   notevim  ~/Dropbox/notes/done.note
 }
 
+# Get a shell into a k8s pod. Provide pod name.
+function ksh {
+  kubectl exec -it $1 -- /bin/bash
+}
 
-###################################################################################################
-# Lyft
-###################################################################################################
+# Bazel commands
+function bbd {
+  bazel build -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+}
+
+function bbo {
+  bazel build -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
+}
+
+function bbr {
+  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function bb {
+  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function btd {
+  bazel test -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+}
+
+function bto {
+  bazel test -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
+}
+
+function btr {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function bt {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
 
 # VPN
 function lvpn {
@@ -81,16 +114,11 @@ function lvpn {
   ./vpn
 }
 
-
-# Bazel commands
-function btd {
-  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+# Lyft
+function gitgogo {
+  git push -u $1 $(git branch | grep \* | cut -d' ' -f2):$(git branch | grep \* | cut -d' ' -f2)
+}
+function lclone {
+  git clone git@github.com:lyft/"$1".git
 }
 
-function bto {
-  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
-}
-
-function btr {
-  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
-}
