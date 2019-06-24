@@ -87,8 +87,17 @@ source $HOME/.aliases
 source $HOME/.custom_cmds
 export PATH="$PATH:$HOME/bin"
 
-export CC=clang
-export CXX=clang++
+#export CC=gcc
+#export CXX=g++
 [ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
 [ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
 source '/home/tallen/src/blessclient/lyftprofile' # bless ssh alias
+
+# UBUNTU BIONIC
+export AWS_OKTA_BACKEND=secret-service
+source '/home/tallen/gopath/src/github.com/lyft/awsaccess/awsaccess2.sh' # awsaccess
+source '/home/tallen/gopath/src/github.com/lyft/awsaccess/oktaawsaccess.sh' # oktaawsaccess
+export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
+
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+PATH=$PATH:/home/tallen/.lyftkube-bin

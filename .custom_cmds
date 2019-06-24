@@ -122,3 +122,12 @@ function lclone {
   git clone git@github.com:lyft/"$1".git
 }
 
+function aimexec {
+  lyftkube exec -ti $@ -- bash
+}
+function aimpods {
+  lyftkube --env $@ get pods -p adhocinfra
+}
+function aimlogs {
+  lyftkube -p adhocinfra logs $@
+}
