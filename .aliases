@@ -28,6 +28,7 @@ alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.fi
 alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
 alias ct='ctags -R .'
 alias make='grc make'
+alias twat='tee /tmp/what'
 
 # Lyft
 alias llap='sh ~/bin/llaptop.sh'
