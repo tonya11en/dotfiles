@@ -29,6 +29,7 @@ alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
 alias ct='ctags -R .'
 alias make='grc make'
 alias twat='tee /tmp/what'
+alias cdaim='cd /home/tallen/gopath/src/github.com/lyft/adhocinfra'
 
 # Lyft
 alias llap='sh ~/bin/llaptop.sh'
@@ -45,12 +46,10 @@ if [[ $(hostname) = "Harbinger" ]]; then
 fi
 
 # Rathma
-if [[ $(hostname) = "rathma" ]]; then
-  alias cde='cd ~/src/envoy'
-  alias cdaim='cd ~/gopath/src/github.com/lyft/adhocinfra'
-  alias cdesc='cd ~/src/envoy-static-config'
-  alias dev='gcloud compute --project "lyft-network-team" ssh --zone "us-west1-b" "persistent-bbox" '
-fi
+alias cde='cd ~/src/envoy'
+alias cdaim='cd ~/gopath/src/github.com/lyft/adhocinfra'
+alias cdesc='cd ~/src/envoy-static-config'
+alias dev='gcloud compute --project "lyft-network-team" ssh --zone "us-west1-b" "persistent-bbox" '
 
 # Cruella
 if [[ $(hostname) = "cruella" ]]; then

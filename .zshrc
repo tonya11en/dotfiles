@@ -2,7 +2,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="blinks"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -41,7 +41,7 @@ export EDITOR='/usr/bin/vim'
 
 ###############################################################################
 # Work
-if [[ $(hostname) = "rathma" ]]; then
+if [[ $(hostname) = "rathma" || $(hostname) = "huehuehue" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
   export GOROOT=/usr/local/go
@@ -91,7 +91,6 @@ export PATH="$PATH:$HOME/bin"
 #export CXX=g++
 [ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
 [ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
-source '/home/tallen/src/blessclient/lyftprofile' # bless ssh alias
 
 # UBUNTU BIONIC
 export AWS_OKTA_BACKEND=secret-service
@@ -101,3 +100,9 @@ export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PATH=$PATH:/home/tallen/.lyftkube-bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/tallen/google-cloud-sdk/path.zsh.inc' ]; then . '/home/tallen/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/tallen/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/tallen/google-cloud-sdk/completion.zsh.inc'; fi
