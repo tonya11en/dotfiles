@@ -41,7 +41,7 @@ export EDITOR='/usr/bin/vim'
 
 ###############################################################################
 # Work
-if [[ $(hostname) = "rathma" ]]; then
+if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith"]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
   export GOROOT=/usr/local/go
@@ -56,32 +56,6 @@ if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
-if [[ $(hostname) = "legion" || $(hostname) = "medusa" ]]; then
-  export ZSH=/home/tallen/.oh-my-zsh
-  export GOPATH='/home/tallen/gopath'
-fi
-
-###############################################################################
-# Cruella
-if [[ $(hostname) = "cruella" ]]; then
-  # Mysterious huge git repo stuff.
-  __git_files () { 
-      _wanted files expl 'local files' _files     
-  }
-
-  # SSH agent stuff.
-  if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s`
-    ssh-add
-  fi
-
-  export TOP=$HOME/main
-  export PYTHONPATH=$PYTHONPATH:$TOP/.python                                                     
-  export PYTHONUSERBASE=$TOP/.python
-  export PATH=$PATH:$TOP/qa/agave/bin:/home/tallen/bin
-  export ZSH=/home/tallen/.oh-my-zsh
-fi
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.custom_cmds
@@ -91,9 +65,3 @@ export CC=clang
 export CXX=clang++
 [ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
 [ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/tallen/google-cloud-sdk/path.zsh.inc' ]; then . '/home/tallen/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/tallen/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/tallen/google-cloud-sdk/completion.zsh.inc'; fi
