@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/tallen/src/envoy-private/envoy_lyft/bazel'
-let g:netrw_dirhist_2='/home/tallen/src/github.com/lyft/control/control'
-let g:netrw_dirhist_3='/home/tallen/src/envoy-private/envoy-static-config'
-let g:netrw_dirhist_4='/home/tallen/src/envoy/.git/hooks'
-let g:netrw_dirhist_5='/home/tallen/src/envoy-static-config/templates/route_configurations'

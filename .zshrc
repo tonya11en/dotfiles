@@ -41,7 +41,7 @@ export EDITOR='/usr/bin/vim'
 
 ###############################################################################
 # Work
-if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith"]]; then
+if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
   export GOROOT=/usr/local/go
