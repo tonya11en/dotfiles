@@ -1,10 +1,13 @@
-SSH_CMD='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+#
+# tallen aliases
+#
 
-alias school='cd ~/Dropbox/Schoolwork/jvm'
-
+# ls stuff
 alias ll='ls -l'
 alias la='ls -la'
 alias ltr='ls -ltr'
+
+# grep stuff
 alias grep='grep --color=auto'
 alias ggrep='git grep -n -i -C2'
 alias gg='git grep -n -i -C2'
@@ -14,62 +17,17 @@ alias glsg='git ls-files | grep'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
-alias vi='vim -p'
+
+# find stuff
 alias f.='find . -name'
 alias f='find'
+
+alias vi='vim -p'
 alias bc='bc -l'
 alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
-alias cdsrc='cd $GOPATH/src/github.com/lyft/'
-alias gc='git commit -s'
-alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
-alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
-alias ct='ctags -R .'
-alias twat='tee /tmp/what'
-
-# Lyft
-alias llap='sh ~/bin/llaptop.sh'
-alias lscr='sh ~/bin/lscreen.sh'
-
-# Kubernetes
-alias kc='kubectl'
-alias klog='kubectl log'
-alias mkb='minikube'
-
-# Harbinger
-if [[ $(hostname) = "Harbinger" ]]; then
-  alias cdhearst='cd $GOPATH/src/github.com/Hearst-DD/'
-fi
-
-# Rathma
-if [[ $(hostname) = "rathma" ]]; then
-  alias cde='cd ~/src/envoy'
-  alias cdaim='cd ~/gopath/src/github.com/lyft/adhocinfra'
-  alias cdesc='cd ~/src/envoy-static-config'
-  alias dev='gcloud compute --project "lyft-network-team" ssh --zone "us-west1-b" "persistent-bbox" '
-fi
-
-# Cruella
-if [[ $(hostname) = "cruella" ]]; then
-  alias sz='source ~/.zshrc'
-  alias cdtop="cd $TOP" 
-  alias cds='cd $TOP/stargate'
-  alias cdst='cd $TOP/qa/test/stargate'
-  alias cdsv='cd $TOP/stargate/vdisk_controller'
-  alias cdu='cd $TOP/util'
-  alias cdbt='cd $TOP/build/testoutput'
-  alias p26="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.6 /usr/bin/python"
-  alias p27="sudo rm /usr/bin/python ; sudo cp /usr/bin/python2.7 /usr/bin/python"
-  alias oberon='svm 10.61.192.107'
-  alias heisenbug='svm 10.61.192.156'
-  alias dany='svm 10.61.192.65'
-  alias testone='PYTHONPATH=.:$TOP/.python PYTHONUSERBASE=$TOP/.python python -u $TOP/qa/tools/ptest/ptest.py -I $HOME/.ssh/ptest_local_key -m http://uranus.corp.nutanix.com/antibodies/durham_ips.txt -o "-V"  --copy_results_always -l'
-  alias mknt='pushd $TOP; make CMAKE_CUSTOM_BUILD_TESTS=0 BUILD_TESTS=0 force_cmake && make CMAKE_CUSTOM_BUILD_TESTS=0 BUILD_TESTS=0 && make installer && make media NOS_VERSION=master; popd'
-
-  CPP_LINT="$TOP/tools/coding-style/cpplint.py"
-  alias ncl='git dh --name-only --relative | xargs -r $CPP_LINT 2>&1 | egrep -v "^Done|^Skipping|^Ignoring"'
-fi
+alias gc='git checkout'
 
 source ~/.tmp_alias

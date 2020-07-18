@@ -1,5 +1,4 @@
-# Tony's custom functions.
-# Author: Tony Allen (cyril0allen@gmail.com)
+# custom funcs
 
 # Highlight text in various output.
 function hi {
@@ -9,15 +8,6 @@ function hi {
 # Remove IP from known hosts.
 function rmkh {
   cat ~/.ssh/known_hosts | grep -v $1 > ~/.ssh/known_hosts
-}
-
-# Generate cscope db for rook and open cscope.
-function rookcs {
-  cdrook &&
-
-  find . -name \*.go | grep -v ./vendor\* > cscope.files &&
-
-  cscope -k -q
 }
 
 function cdtop {
@@ -30,95 +20,3 @@ function cdtop {
     cd ..
   done
 }
-
-# For filling out forms with vim.
-function form {
-  rm /tmp/form.what
-  vim /tmp/form.what
-  cat /tmp/form.what
-}
-
-function notevim {
-  vim +'normal Go' +'normal Go' +'normal 80i-' +'r!date' +'normal Go' +'normal 80i-' +'normal Go' $1
-}
-
-# NOTES
-function note {
-  mkdir -p ~/Dropbox/notes 
-  notevim ~/Dropbox/notes/append.note
-}
-
-function lnote {
-  mkdir -p ~/Dropbox/notes 
-  notevim ~/Dropbox/notes/lyft.note
-}
-
-function todo {
-  mkdir -p ~/Dropbox/notes 
-  vim  ~/Dropbox/notes/todo.txt
-}
-
-function errlog {
-  mkdir -p ~/Dropbox/notes 
-  notevim  ~/Dropbox/notes/errlog.note
-}
-
-
-function ldone {
-  mkdir -p ~/Dropbox/notes 
-  notevim  ~/Dropbox/notes/done.note
-}
-
-# Get a shell into a k8s pod. Provide pod name.
-function ksh {
-  kubectl exec -it $1 -- /bin/bash
-}
-
-# Bazel commands
-function bbd {
-  bazel build -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
-}
-
-function bbo {
-  bazel build -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
-}
-
-function bbr {
-  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
-}
-
-function bb {
-  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
-}
-
-function btd {
-  bazel test -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
-}
-
-function bto {
-  bazel test -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
-}
-
-function btr {
-  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
-}
-
-function bt {
-  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
-}
-
-# VPN
-function lvpn {
-  echo IeThach8 | xclip -sel clip
-  cd ~/.vpn/
-  ./vpn
-}
-
-# Lyft
-function gitgogo {
-  git push -u $1 $(git branch | grep \* | cut -d' ' -f2):$(git branch | grep \* | cut -d' ' -f2)
-}
-function lclone {
-  git clone git@github.com:lyft/"$1".git
-}
-

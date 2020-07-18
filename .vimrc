@@ -20,7 +20,7 @@ set history=200
 set backspace=indent,eol,start
 set linebreak
 set cmdheight=1               " command line two lines high
-set undolevels=1000           " 1000 undos
+set undolevels=10000          " 10000 undos
 set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
 set ttyfast                   " we have a fast terminal
@@ -59,30 +59,7 @@ nmap <LocalLeader>tl :set list!<cr>
 nmap <LocalLeader>pp :set paste!<cr>
 
 " Set colorscheme
-colorscheme molokai
+colorscheme monokai
 
 " Recognize markdown format.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Run gofmt on save for go files.
-" au BufWritePost *.go !gofmt -w %
-
-au BufRead,BufNewFile test.log set filetype=gtest
-
-" Pathogen
-execute pathogen#infect()
-
-" make tab do escape stuff
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
-imap <Tab> <Esc>
-au VimEnter * map <Tab> <Esc>
-au VimEnter * imap <Tab> <Esc>
-au VimEnter * vmap <Tab> <Esc> 
-
-"cscope stuff
-nmap <F8> :TagbarToggle<CR>
-nnoremap <F12> :CtrlPTag<cr>
