@@ -1,3 +1,17 @@
+" vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo "~/.vim/autoload/plug.vim" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'flazz/vim-colorschemes'
+Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'vim-airline/vim-airline'
+call plug#end()
+
 syntax on
 set background=dark
 set cursorline                " highlight the current line
@@ -36,8 +50,7 @@ set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 set laststatus=2
 set t_Co=256                  " Enable 256 color mode
-"set textwidth=80             " Wrap text at 80 chars
-set textwidth=100             " Wrap text at 100 chars
+set textwidth=80             " Wrap text at 80 chars
 
 "  searching
 set incsearch                 " incremental search
@@ -50,7 +63,17 @@ set diffopt=filler,iwhite     " ignore all whitespace and sync
 set backup
 set backupdir=~/.vim_backup
 set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
-"set viminfo='100,f1
+
+" make tab do escape stuff
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+imap <Tab> <Esc>
+au VimEnter * map <Tab> <Esc>
+au VimEnter * imap <Tab> <Esc>
+au VimEnter * vmap <Tab> <Esc> 
 
 " mappings
 " toggle list mode
@@ -59,7 +82,4 @@ nmap <LocalLeader>tl :set list!<cr>
 nmap <LocalLeader>pp :set paste!<cr>
 
 " Set colorscheme
-colorscheme monokai
-
-" Recognize markdown format.
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+colorscheme molokai

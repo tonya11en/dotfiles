@@ -49,6 +49,13 @@ if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith"
 fi
 
 ###############################################################################
+# txa
+if [[ $(hostname) = "txa-mbp" || $(hostname) = "txa-mbp.local" ]]; then
+  export ZSH=/Users/txa/.oh-my-zsh
+  set -o vi
+fi
+
+###############################################################################
 # Harbinger
 if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
@@ -58,10 +65,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.tmp_aliases
 source $HOME/.custom_cmds
 export PATH="$PATH:$HOME/bin"
 
 export CC=clang
 export CXX=clang++
-[ -z "${NUM_CPUS}" ] && NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
-[ -z "${ENVOY_SRCDIR}" ] && export ENVOY_SRCDIR=/source
