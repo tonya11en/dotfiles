@@ -29,5 +29,3 @@ alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
 alias gc='git checkout'
-
-source ~/.tmp_alias
