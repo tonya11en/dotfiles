@@ -57,7 +57,7 @@ source $HOME/.aliases
 source $HOME/.tmp_aliases
 source $HOME/.custom_cmds
 export PATH="$PATH:$HOME/bin"
-mkdir ~/.vim_backup
+mkdir -p ~/.vim_backup
 
 export CC=clang
 export CXX=clang++
