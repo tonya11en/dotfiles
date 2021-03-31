@@ -41,27 +41,15 @@ export EDITOR='/usr/bin/vim'
 ###############################################################################
 
 ###############################################################################
-# Work
-if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith" ]]; then
-  export ZSH=/home/tallen/.oh-my-zsh
-  export GOPATH='/home/tallen/gopath'
-#  export GOROOT=/usr/local/go
-  export PATH=$PATH:$GOPATH/bin
-fi
-
-###############################################################################
-# txa
-if [[ $(hostname) = "txa-mbp" || $(hostname) = "txa-mbp.local" ]]; then
-  export ZSH=/Users/txa/.oh-my-zsh
-  set -o vi
-fi
-
-###############################################################################
 # Harbinger
 if [[ $(hostname) = "Harbinger" || $(hostname) = "Harbinger.local" ]]; then
   export ZSH=/Users/cyril/.oh-my-zsh
   export GOPATH='/Users/cyril/Go'
   export JAVA_HOME=$(/usr/libexec/java_home)
+else
+  export ZSH=/home/tallen/.oh-my-zsh
+  export GOPATH='/home/tallen/gopath'
+  export PATH=$PATH:$GOPATH/bin
 fi
 
 source $ZSH/oh-my-zsh.sh
