@@ -54,10 +54,10 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-source $HOME/.work_stuff_do_not_commit
 source $HOME/.tmp_aliases
 source $HOME/.custom_cmds
 export PATH="$PATH:$HOME/bin"
+mkdir ~/.vim_backup
 
 export CC=clang
 export CXX=clang++
