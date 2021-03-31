@@ -20,3 +20,40 @@ function cdtop {
     cd ..
   done
 }
+
+function gitgogo {
+  git push -u $1 $(git branch | grep \* | cut -d' ' -f2):$(git branch | grep \* | cut -d' ' -f2)
+}
+
+# Bazel commands
+function bbd {
+  bazel build -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+}
+
+function bbo {
+  bazel build -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
+}
+
+function bbr {
+  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function bb {
+  bazel build $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function btd {
+  bazel test -c dbg $@ --disk_cache=/home/tallen/.cache/tony_bazel_dbg
+}
+
+function bto {
+  bazel test -c opt $@ --disk_cache=/home/tallen/.cache/tony_bazel_opt
+}
+
+function btr {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}
+
+function bt {
+  bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
+}

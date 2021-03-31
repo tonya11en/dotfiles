@@ -17,6 +17,7 @@ alias glsg='git ls-files | grep'
 alias hgrep='history | grep -i'
 alias rgrep='grep -R'
 alias egrep='egrep --color=auto'
+alias twat='tee /tmp/what'
 
 # find stuff
 alias f.='find . -name'
@@ -29,3 +30,10 @@ alias ssh='ssh -o ServerAliveInterval=10'
 alias goodnight='sudo shutdown -h now'
 alias cdgo='cd $GOPATH'
 alias gc='git checkout'
+
+# envoy stuff
+alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
+alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
+alias bazel='bazelisk'
+alias cde='cd ~/src/envoy'
+

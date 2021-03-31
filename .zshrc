@@ -44,7 +44,7 @@ export EDITOR='/usr/bin/vim'
 if [[ $(hostname) = "rathma" || $(hostname) = "legion" || $(hostname) = "lilith" ]]; then
   export ZSH=/home/tallen/.oh-my-zsh
   export GOPATH='/home/tallen/gopath'
-  export GOROOT=/usr/local/go
+#  export GOROOT=/usr/local/go
   export PATH=$PATH:$GOPATH/bin
 fi
 
