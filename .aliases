@@ -23,7 +23,7 @@ alias twat='tee /tmp/what'
 alias f.='find . -name'
 alias f='find'
 
-alias vi='vim -p'
+alias vi='nvim -p'
 alias bc='bc -l'
 alias sz='source ~/.zshrc'
 alias ssh='ssh -o ServerAliveInterval=10'
@@ -34,6 +34,13 @@ alias gc='git checkout'
 # envoy stuff
 alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
 alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
-alias bazel='bazelisk'
 alias cde='cd ~/src/envoy'
 
+# docker
+alias dps='docker ps'
+
+alias kmw='gcloud auth login --update-adc'
+alias kc='kubecolor'
+
+alias cdm='cd ~/src/chronosphere/monorepo'
+alias go='grc go'

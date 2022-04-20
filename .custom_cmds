@@ -57,3 +57,31 @@ function btr {
 function bt {
   bazel test $@ --disk_cache=/home/tallen/.cache/tony_bazel_release
 }
+
+function untilfail {
+  while $@; do :; done
+}
+
+function kclc {
+  kubectl logs $1 -c m3coordinator
+}
+
+function rcd {
+   droidcli deploy workflow start -D -e rc -t rc_rc_${1} -C ${2} -s ${3} #--fast-unsafe
+}
+
+# Start shadowing write traffic to <rc num> // <sampling rate [0,1.0]>
+function rcshadow {
+  set -x
+  droidcli mirror targets add --env=rc --url="http://m3coordinator-write-headless.rc-${1}:7201/api/v1/prom/remote/write" --override-sampling-rate=${2}
+}
+
+# Get memprofile of <pod> // <templateRef> // <rc num>
+function dcprof {
+  droidcli debug pprof ${1} -C "${2}" -e rc_rc_${3}
+}
+
+# Get the pod's image version <pod>
+function pd {
+  kubectl describe pod ${1} | grep gcr
+}
