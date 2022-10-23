@@ -135,7 +135,7 @@ $PR_GREY)$PR_CYAN$PR_HBAR$PR_URCORNER\
 
 $PR_CYAN$PR_LLCORNER$PR_BLUE$PR_HBAR(\
 $PR_YELLOW%D{%H:%M:%S}\
-$PR_LIGHT_BLUE%{$reset_color%}`git_prompt_info``git_prompt_status`$PR_BLUE)$PR_CYAN$PR_HBAR\
+$PR_LIGHT_BLUE%{$reset_color%}`git_prompt_info` `git rev-parse --short=8 HEAD ``git_prompt_status`$PR_BLUE)$PR_CYAN$PR_HBAR\
 $PR_HBAR\
 >$PR_NO_COLOUR '
 

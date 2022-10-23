@@ -62,26 +62,40 @@ function untilfail {
   while $@; do :; done
 }
 
+function kclcf {
+  set -x
+  kubectl logs $1 -c m3coordinator -f
+}
+
+function kclcp {
+  set -x
+  kubectl logs $1 -c m3coordinator -p
+}
+
 function kclc {
+  set -x
   kubectl logs $1 -c m3coordinator
 }
 
-function rcd {
-   droidcli deploy workflow start -D -e rc -t rc_rc_${1} -C ${2} -s ${3} #--fast-unsafe
+function rcd_fast {
+   set -x
+   droidcli deploy workflow start -e rc -t rc_rc_${1} -C ${2} -s ${3} --no-validation --no-apply-prompt-check --fast-unsafe
 }
 
 # Start shadowing write traffic to <rc num> // <sampling rate [0,1.0]>
 function rcshadow {
   set -x
-  droidcli mirror targets add --env=rc --url="http://m3coordinator-write-headless.rc-${1}:7201/api/v1/prom/remote/write" --override-sampling-rate=${2}
+  droidcli mirror targets add --env=rc --url="https://rc-${1}.chronosphere.io:443/metricsingester.MetricsIngester/Ingest" --sampling-rate=${2}
 }
 
-# Get memprofile of <pod> // <templateRef> // <rc num>
+# Get memprofile of <type> // <templateRef> // <rc num> // <pod>
 function dcprof {
-  droidcli debug pprof ${1} -C "${2}" -e rc_rc_${3}
+  ~/bin/profile.sh
+#  droidcli debug pprof ${4} -C "${2}" -e rc_rc_${3} -t ${1} -r ${5}
 }
 
 # Get the pod's image version <pod>
 function pd {
+  set -x
   kubectl describe pod ${1} | grep gcr
 }

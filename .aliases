@@ -34,7 +34,6 @@ alias gc='git checkout'
 # envoy stuff
 alias ecs='cd ~/src && cd envoy && git ls-files | egrep "*.cc$|*.h$" > cscope.files && cscope -q -p3'
 alias kick-ci='git commit -s --allow-empty -m "Kick CI" && git push'
-alias cde='cd ~/src/envoy'
 
 # docker
 alias dps='docker ps'
@@ -43,4 +42,7 @@ alias kmw='gcloud auth login --update-adc'
 alias kc='kubecolor'
 
 alias cdm='cd ~/src/chronosphere/monorepo'
+alias cde='cd ~/src/chronosphere/envconfig'
+alias cds='cd ~/src/chronosphere/monorepo/src/pkg/shaper'
 alias go='grc go'
+alias flame='go tool pprof -http=:'

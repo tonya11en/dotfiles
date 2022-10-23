@@ -16,18 +16,26 @@
 [diff]
 	renamelimit = 0
 [core]
-	editor = vim
+	editor = nvim
 	pager = less -x2
 	excludesfile = /home/tallen/.gitignore_global
+[branch]
+  sort = -committerdate
 [alias]
   l = log --graph --oneline --decorate
   ll = log --graph --oneline --decorate --branches --tags
   lll = log --graph --oneline --decorate --all
   dh = diff HEAD
   sr = stash --keep-index
+  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
 [log]
 	format = fuller
 	decorate = true
 [format]
 	pretty = fuller
 	signoff = true
+[url "git@github.com:"]
+	insteadOf = https://github.com
+	insteadOf = https://github.com/
+[fetch]
+	prune = true
